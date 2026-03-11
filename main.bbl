@@ -1,0 +1,159 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{donvito2023}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=78eee282a83008edfd3d2a5a7f147283}{%
+           family={Donvito},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=00f65b434ff6b8551beffdbbc9f99e18}{%
+           family={Gomes},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e28a93b0e08b12016b12b7d8182ec59}{%
+           family={Campos},
+           familyi={C\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=09b34926f604591a206c2776de395e92}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e6d0d01b3e3b95858d8ba4aa914bbe4}{%
+           family={Fuentes},
+           familyi={F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72867197c3161a918a9a6ec3d6f120b9}{%
+           family={{the EOSC Technical Working Groups}},
+           familyi={t\bibinitperiod}}}%
+      }
+      \strng{namehash}{00d7e0db4e143496a484319a781df52d}
+      \strng{fullhash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{bibnamehash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{authorbibnamehash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{authornamehash}{00d7e0db4e143496a484319a781df52d}
+      \strng{authorfullhash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{1}
+      \field{title}{Federated cloud and data services in the European Open Science Cloud}
+      \field{volume}{37}
+      \field{year}{2023}
+      \field{pages}{14\bibrangedash 29}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1177/10943420221127696
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/10943420221127696
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/10943420221127696
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{donvito2023}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=78eee282a83008edfd3d2a5a7f147283}{%
+           family={Donvito},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=00f65b434ff6b8551beffdbbc9f99e18}{%
+           family={Gomes},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e28a93b0e08b12016b12b7d8182ec59}{%
+           family={Campos},
+           familyi={C\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=09b34926f604591a206c2776de395e92}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e6d0d01b3e3b95858d8ba4aa914bbe4}{%
+           family={Fuentes},
+           familyi={F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72867197c3161a918a9a6ec3d6f120b9}{%
+           family={{the EOSC Technical Working Groups}},
+           familyi={t\bibinitperiod}}}%
+      }
+      \strng{namehash}{00d7e0db4e143496a484319a781df52d}
+      \strng{fullhash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{bibnamehash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{authorbibnamehash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \strng{authornamehash}{00d7e0db4e143496a484319a781df52d}
+      \strng{authorfullhash}{e894edf9c45ce30f03e28f2a0db6d5c6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{1}
+      \field{title}{Federated cloud and data services in the European Open Science Cloud}
+      \field{volume}{37}
+      \field{year}{2023}
+      \field{pages}{14\bibrangedash 29}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1177/10943420221127696
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/10943420221127696
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/10943420221127696
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

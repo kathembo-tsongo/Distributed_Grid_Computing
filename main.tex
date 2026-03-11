@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- 1. Essential Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{graphicx} 
+\usepackage[style=apa, backend=biber]{biblatex} 
+\usepackage{setspace} 
+\usepackage{parskip}  
+\usepackage{times}    
+\usepackage{hyperref} 
+\usepackage{tocloft}  
+\usepackage{titlesec}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage{caption}
+
+% --- 2. Global Formatting & References ---
+\onehalfspacing     
+\graphicspath{{./images/}}
+\renewcommand{\thesection}{\Roman{section}} % Roman numerals for sections
+\addbibresource{references.bib} % Link to your bibliography file
+
+% Your custom colors
+\definecolor{tableblue}{RGB}{31, 56, 100}
+\definecolor{rowblue}{RGB}{235, 241, 250}
+
+% --- 3. Start of Document ---
+\begin{document}
+
+% --- COVER PAGE ---
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.5cm}
+        \includegraphics[width=5cm]{strathmore_logo.png} 
+        
+        \vspace{0.8cm}
+        \huge \textbf{STRATHMORE UNIVERSITY} \\
+        
+        \Large
+        School of Computing and Engineering Sciences\\
+        Master of Science in Information Technology\\
+        MIT8102: Advanced Distributed Systems
+        
+        \vfill
+        \huge \textbf{TERM PAPER}
+        
+        \vspace{0.8cm}
+        \LARGE \textbf{Distributed Grid Computing:} \\
+        Architectures, Security, Middleware, and Emerging Paradigms
+        
+        \vfill
+        \Large Submitted in Partial Fulfilment of the Requirements for MIT8102
+        
+        \vfill
+        \begin{flushleft}
+        \Large
+        \textbf{Prepared by:}\\
+        Kathembo Tsongo Dieudonne \hfill \textbf{112721} \\
+        Neemaya [Last Name] \hfill \textbf{[Student ID]} \\
+        \end{flushleft}
+        
+        \vfill
+        \large \today        
+    \end{center}
+\end{titlepage}
+
+% --- TABLE OF CONTENTS ---
+\newpage
+% \pagenumbering{roman} % Use roman for front matter
+% \tableofcontents
+% \newpage
+
+% --- MAIN CONTENT ---
+\pagenumbering{arabic} % Switch to 1, 2, 3 for the paper content
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction} % Adds unnumbered intro to TOC
+
+\section{Grid Computing Architectures}
+\subsection{The Architgitectural Design Challenge}
+Designing an architecture for Distributed Grid Computing requires resolving a fundamental tension: the architecture must
+ be flexible enough to accommodate the enormous heterogeneity of grid resources and use cases, yet standardised enough to
+  enable interoperability across administrative boundaries. An architecture that is too rigid will fail to accommodate the 
+  diversity of real-world grid deployments; one that is too flexible will produce incompatible implementations that cannot 
+  interoperate. The evolution of grid architectures over three decades reflects successive attempts to strike this balance,
+   from the pragmatic five-layer model of the original Globus Toolkit, through the service-oriented Open Grid Services 
+   Architecture, to the contemporary federated architectures of the European Open Science Cloud \parencite{donvito2023}.
+
+\subsection{The Five-Layer Hourglass Architecture}
+
+\subsubsection{Fabric Layer}
+The Fabric layer comprises the physical and logical resources that grid computing aggregates: processors and computational 
+clusters, mass storage systems, databases and scientific data archives, network infrastructure, and specialised instruments
+ such as radio telescopes and genomic sequencers. Each Fabric layer resource is managed by a local resource management
+  system (LRMS) — also called a batch scheduler — that enforces site-specific access policies and executes submitted jobs. 
+  Prevalent LRMS platforms include SLURM, HTCondor, PBS/TORQUE, and LSF. Critically, Fabric layer resources retain full
+   autonomy under their local administrators; grid architecture does not require sites to surrender control of their 
+   resources.
+
+\subsubsection{Connectivity Layer}
+
+\subsubsection{Resource Layer}
+
+\subsubsection{Collective Layer}
+
+\subsubsection{Application Layer}
+
+\subsection{The Open Grid Services Architecture (OGSA)}
+\section{Resource Management and Scheduling}
+% Your content here...
+
+\section{Security Infrastructure and Middleware}
+% Your content here...
+
+\section{Challenges, Case Studies, and Emerging Paradigms}
+% Your content here...
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+% --- BIBLIOGRAPHY ---
+\newpage
+\printbibliography[title={References}]
+
+\end{document}
