@@ -19,7 +19,7 @@
 % --- 2. Global Formatting & References ---
 \onehalfspacing     
 \graphicspath{{./images/}}
-\renewcommand{\thesection}{\Roman{section}} % Roman numerals for sections
+% \renewcommand{\thesection}{\Roman{section}} % Roman numerals for sections
 \addbibresource{references.bib} % Link to your bibliography file
 
 % Your custom colors
@@ -51,15 +51,15 @@
         Architectures, Security, Middleware, and Emerging Paradigms
         
         \vfill
-        \Large Submitted in Partial Fulfilment of the Requirements for MIT8102
+        Submitted in Partial Fulfilment of the Requirements for MIT8102
         
         \vfill
-        \begin{flushleft}
-        \Large
+       
+       
         \textbf{Prepared by:}\\
-        Kathembo Tsongo Dieudonne \hfill \textbf{112721} \\
-        Neemaya [Last Name] \hfill \textbf{[Student ID]} \\
-        \end{flushleft}
+        Kathembo Tsongo Dieudonne \textbf{112721} \\
+        Neemaya [Last Name] \textbf{[Student ID]} \\
+       
         
         \vfill
         \large \today        
@@ -80,32 +80,45 @@
 
 \section{Grid Computing Architectures}
 \subsection{The Architgitectural Design Challenge}
-Designing an architecture for Distributed Grid Computing requires resolving a fundamental tension: the architecture must
- be flexible enough to accommodate the enormous heterogeneity of grid resources and use cases, yet standardised enough to
-  enable interoperability across administrative boundaries. An architecture that is too rigid will fail to accommodate the 
-  diversity of real-world grid deployments; one that is too flexible will produce incompatible implementations that cannot 
-  interoperate. The evolution of grid architectures over three decades reflects successive attempts to strike this balance,
-   from the pragmatic five-layer model of the original Globus Toolkit, through the service-oriented Open Grid Services 
-   Architecture, to the contemporary federated architectures of the European Open Science Cloud \parencite{donvito2023}.
+Designing an architecture for Distributed Grid Computing requires resolving a fundamental tension: 
+the architecture must be flexible enough to accommodate the enormous heterogeneity of grid resources 
+and use cases, yet standardised enough to enable interoperability across administrative boundaries. 
+An architecture that is too rigid will fail to accommodate the diversity of real-world grid deployments; 
+one that is too flexible will produce incompatible implementations that cannot interoperate. Foster and
+ Kesselman \parencite{foster1997} identified this tension in the earliest formulation of the Globus system, describing 
+ the need for a “vertically integrated treatment of application, middleware, and network” that could
+  provide basic mechanisms such as authentication, resource discovery, and data access across heterogeneous 
+  systems — precisely the balance between standardisation and flexibility that continues to define grid architectural debates today.
+
+The evolution of grid architectures over three decades reflects successive attempts to strike this balance. 
+The five-layer hourglass model introduced through the Globus Toolkit established a minimal core of protocols 
+at its “narrow waist”, enabling both heterogeneous resources below and diverse applications above to interact 
+through standardised interfaces \parencite{foster1997, foster2006}. As web services technology matured,
+ the Open Grid Services Architecture (OGSA) unified the grid resource model with WSDL-based web services, 
+ allowing grid resources to be exposed through standardised interfaces across heterogeneous environments 
+ \parencite{foster2002, snelling2009}. Most recently, the European Open Science Cloud (EOSC) has
+  emerged as the most ambitious expression of the federated architecture ideal: a “system of systems” 
+  approach that federates data, computing services, and research tools from institutions across Europe 
+  under a common interoperability framework, without any single entity controlling the underlying resources \parencite{eosc2022}. 
+  Grigoryeva and Klimentov \parencite{grigoryeva2024}, in a comprehensive review published in Supercomputing Frontiers and Innovations, 
+  trace this thirty-year architectural trajectory and argue that each evolutionary step — from Globus to OGSA to 
+  EOSC — has preserved the core principle of minimal standardisation at the interface while progressively expanding
+   the diversity of resources and use cases the architecture can accommodate.
+
+The architectural design challenge is not merely a technical one: it is equally a governance challenge. 
+Interoperability across administrative boundaries requires not only common protocols, but also institutional
+ agreements about what those protocols mean and how they will be enforced. Snelling et al. \parencite{snelling2009}, in the
+  IEEE Distributed Systems Online primer on OGSA, emphasise that achieving real-world interoperability demands
+   standards-based components that allow architects to “meet their organisations’ needs with confidence that
+    they are interoperable with other standards-based grids, and that they can grow and adapt as those needs 
+    change.” This insight — that architectural standardisation must be accompanied by institutional commitment 
+    to those standards — has shaped the governance structures of every major production grid infrastructure from 
+    the WLCG to the EGI, and remains the central challenge for EOSC as it attempts to federate an unprecedentedly
+     diverse ecosystem of European research services \parencite{eosc2022}.
+
+
 
 \subsection{The Five-Layer Hourglass Architecture}
-
-\subsubsection{Fabric Layer}
-The Fabric layer comprises the physical and logical resources that grid computing aggregates: processors and computational 
-clusters, mass storage systems, databases and scientific data archives, network infrastructure, and specialised instruments
- such as radio telescopes and genomic sequencers. Each Fabric layer resource is managed by a local resource management
-  system (LRMS) — also called a batch scheduler — that enforces site-specific access policies and executes submitted jobs. 
-  Prevalent LRMS platforms include SLURM, HTCondor, PBS/TORQUE, and LSF. Critically, Fabric layer resources retain full
-   autonomy under their local administrators; grid architecture does not require sites to surrender control of their 
-   resources.
-
-\subsubsection{Connectivity Layer}
-
-\subsubsection{Resource Layer}
-
-\subsubsection{Collective Layer}
-
-\subsubsection{Application Layer}
 
 \subsection{The Open Grid Services Architecture (OGSA)}
 \section{Resource Management and Scheduling}
