@@ -19,6 +19,583 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
+    \entry{adimora2025hpc}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=05fab01a68500ffb9ab4d1b605d1c6a7}{%
+           family={Adimora},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fdd3b9d1113e00163cad449e5a148da9}{%
+           family={Gundla},
+           familyi={G\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4986615fe9031edfa590ac244b5c4dec}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ca763800fbf7c09c892319901a670052}
+      \strng{fullhash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{bibnamehash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{authorbibnamehash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{authornamehash}{ca763800fbf7c09c892319901a670052}
+      \strng{authorfullhash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cluster Computing}
+      \field{title}{Machine learning approaches for optimizing high-performance computing scheduling: {A} comprehensive survey and analysis}
+      \field{volume}{28}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1007/s10586-025-05521-8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10586-025-05521-8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10586-025-05521-8
+      \endverb
+    \endentry
+    \entry{aimar2019monit}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=e7c86c712247d37ad83caf2ea21ffc16}{%
+           family={Aimar},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f52787196f27df68bf6575cd37adb2f}{%
+           family={Aguado\bibnamedelima Corman},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edfc9932118ebdf27da5bbc795a8820b}{%
+           family={Andrade},
+           familyi={A\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17a40b5fbd9028e3d5dee6571a4be13b}{%
+           family={Delgado\bibnamedelima Fernandez},
+           familyi={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=790cdae57e0a42a5a28ead2843c56255}{%
+           family={Garrido\bibnamedelima Bear},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4bc2e718fbba1f4504e59c1950aca57}{%
+           family={Karavakis},
+           familyi={K\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae6f30e69ae6272b2b56bca0b33ae31f}{%
+           family={Marek\bibnamedelima Kulikowski},
+           familyi={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4008930e96753ac27321e1282e007df}{%
+           family={Magnoni},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{084e69e5bd427bf2ae026bec5f2b6fb6}
+      \strng{fullhash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{bibnamehash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{authorbibnamehash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{authornamehash}{084e69e5bd427bf2ae026bec5f2b6fb6}
+      \strng{authorfullhash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EPJ Web of Conferences}
+      \field{title}{{MONIT}: Monitoring the {CERN} data centres and the {WLCG} infrastructure}
+      \field{volume}{214}
+      \field{year}{2019}
+      \field{pages}{08031}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1051/epjconf/201921408031
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1051/epjconf/201921408031
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1051/epjconf/201921408031
+      \endverb
+    \endentry
+    \entry{andreeva2010dashboard}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a1bdea6bc3d66bb92a8a0e6406f89a84}{%
+           family={Andreeva},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7c86c712247d37ad83caf2ea21ffc16}{%
+           family={Aimar},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=052a4b2f7c2cc7397aef4848b445e453}{%
+           family={Kerekes},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8213761f234f9ac22bebbde87ebb658a}{%
+           family={Saiz},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4dfe404f792782143f6c607f05f65e54}
+      \strng{fullhash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{bibnamehash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{authorbibnamehash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{authornamehash}{4dfe404f792782143f6c607f05f65e54}
+      \strng{authorfullhash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Grid Computing}
+      \field{number}{3}
+      \field{title}{Experiment dashboard for monitoring computing activities of the {LHC} virtual organizations}
+      \field{volume}{8}
+      \field{year}{2010}
+      \field{pages}{323\bibrangedash 339}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s10723-010-9148-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10723-010-9148-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10723-010-9148-x
+      \endverb
+    \endentry
+    \entry{andreozzi2009glue}{report}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=e56c615c9db273ef49a87630d1f275cb}{%
+           family={Andreozzi},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=534d02e99991362a90b03b6ed79224a1}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b97cda1c76fe1429c590b68f056df77e}{%
+           family={Ehm},
+           familyi={E\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e89060b3d91a101fd88b7d9427e65118}{%
+           family={Field},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d193865e9b70f1adff4a0ac45f71319d}{%
+           family={Galang},
+           familyi={G\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=605a25df2e5632af4d8ab6786f8bbe33}{%
+           family={Konya},
+           familyi={K\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f960fb127d795361e072b1cea0c73bb0}{%
+           family={Litmaath},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=34cfd75fae4f6315757874e1b6540fef}{%
+           family={Millar},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3212c255ef3e364c033d955891c0ea3}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Open Grid Forum}%
+      }
+      \strng{namehash}{b0402049ebf366752667479b1d7326a9}
+      \strng{fullhash}{80cbd04f86d75e899d843f783051039d}
+      \strng{bibnamehash}{80cbd04f86d75e899d843f783051039d}
+      \strng{authorbibnamehash}{80cbd04f86d75e899d843f783051039d}
+      \strng{authornamehash}{b0402049ebf366752667479b1d7326a9}
+      \strng{authorfullhash}{80cbd04f86d75e899d843f783051039d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{GFD.147}
+      \field{title}{{GLUE} specification v. 2.0}
+      \field{type}{Recommendation}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://www.ogf.org/documents/GFD.147.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ogf.org/documents/GFD.147.pdf
+      \endverb
+    \endentry
+    \entry{burke2011}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=534d02e99991362a90b03b6ed79224a1}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e89060b3d91a101fd88b7d9427e65118}{%
+           family={Field},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d539e8d649be510eda593e621069dc3}{%
+           family={Horat},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5f7ce25aa0f5c47f507b9690cf193183}
+      \strng{fullhash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{bibnamehash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{authorbibnamehash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{authornamehash}{5f7ce25aa0f5c47f507b9690cf193183}
+      \strng{authorfullhash}{3590dec19c5c3abcbefb82f6925939d5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Physics: Conference Series}
+      \field{number}{6}
+      \field{title}{Migration to the {GLUE} 2.0 information schema in the {LCG/EGEE/EGI} production {Grid}}
+      \field{volume}{331}
+      \field{year}{2011}
+      \field{pages}{062004}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1742-6596/331/6/062004
+      \endverb
+      \verb{urlraw}
+      \verb https://iopscience.iop.org/article/10.1088/1742-6596/331/6/062004/pdf
+      \endverb
+      \verb{url}
+      \verb https://iopscience.iop.org/article/10.1088/1742-6596/331/6/062004/pdf
+      \endverb
+    \endentry
+    \entry{calatrava2023}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=45f95697236d4b970d1498f5b3d0b20c}{%
+           family={Calatrava},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=116472a54461ce1fd86f8117ef133b93}{%
+           family={Asorey},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2c74aab33c3d1cce9d5365a5ea91df22}{%
+           family={Astalos},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48c42855720d4056a71f6e69b5091eca}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=659ecd4a0feefa3feb19e07571a47729}{%
+           family={Benincasa},
+           familyi={B\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7467f1d6b18c0a881bb5910048060c22}{%
+           family={Blanquer},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=35124d693965921fa7cc574cbbe0aa04}{%
+           family={Sánchez-Ferrero},
+           familyi={S\bibinithyphendelim F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a4a1cd34c6e22bec170306166325dcc3}
+      \strng{fullhash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{bibnamehash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{authorbibnamehash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{authornamehash}{a4a1cd34c6e22bec170306166325dcc3}
+      \strng{authorfullhash}{1826238f107d143e7f2fa30298f015e1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Science Review}
+      \field{title}{A survey of the {European Open Science Cloud} services for expanding the capacity and capabilities of multidisciplinary scientific applications}
+      \field{volume}{49}
+      \field{year}{2023}
+      \field{pages}{100571}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cosrev.2023.100571
+      \endverb
+    \endentry
+    \entry{casagrande2022green}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5b4701b543bb364525989a39f7f0519b}{%
+           family={Casagrande},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ead8fa4b9fa3d704fb7e117dc5357d16}{%
+           family={Koslovski},
+           familyi={K\bibinitperiod},
+           given={G.\bibnamedelimi P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=82da70637dedf2ee587549aec9f62b46}{%
+           family={Miers},
+           familyi={M\bibinitperiod},
+           given={C.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1cb7e66cd5fdeff23d2d01ca4532bde3}{%
+           family={Pillon},
+           familyi={P\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3d51b9aad49becb7d46cec4f741d104}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46b5fed74d5552e361c5535a0e9a0d79}
+      \strng{fullhash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{bibnamehash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{authorbibnamehash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{authornamehash}{46b5fed74d5552e361c5535a0e9a0d79}
+      \strng{authorfullhash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Grid and Utility Computing}
+      \field{number}{6}
+      \field{title}{Don’t hurry, be green: {S}cheduling server shutdowns in grid computing with deep reinforcement learning}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{589\bibrangedash 606}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1504/IJGUC.2022.128303
+      \endverb
+      \verb{urlraw}
+      \verb https://gkoslovski.github.io/files/ijguc-2022-01.pdf
+      \endverb
+      \verb{url}
+      \verb https://gkoslovski.github.io/files/ijguc-2022-01.pdf
+      \endverb
+    \endentry
+    \entry{chard2023}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=5ff463e31dcfc6ad54a94ea306b69218}{%
+           family={Chard},
+           familyi={C\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d6ddebce17ac0a5e9d84e607c813fd4}{%
+           family={Pruyne},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf17d10b5ce6a7d00b4c30d6c02f70b5}{%
+           family={McKee},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa76c1ee0c802e8d4caea5d653da564d}{%
+           family={Bryan},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18f77583723316dd0c80c4cc1a1e64ed}{%
+           family={Raumann},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4225a6254d56f1d9beb686e6eaef78e2}{%
+           family={Ananthakrishnan},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f8a1c82a9379d533baf507a4cca2d79}{%
+           family={Chard},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{100e1779c1bcafbe03deb528de02200d}
+      \strng{fullhash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{bibnamehash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{authorbibnamehash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{authornamehash}{100e1779c1bcafbe03deb528de02200d}
+      \strng{authorfullhash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Future Generation Computer Systems}
+      \field{title}{Globus automation services: Research process automation across the space–time continuum}
+      \field{volume}{141}
+      \field{year}{2023}
+      \field{pages}{334\bibrangedash 347}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.future.2022.11.026
+      \endverb
+    \endentry
+    \entry{czajkowski2001}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3bf523b938a66979b10e8de1d0bb429c}{%
+           family={Czajkowski},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a19b3fe282b397516438c4a796d13ac9}{%
+           family={Fitzgerald},
+           familyi={F\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{5e7b50d01505e72b56c582aee2f97177}
+      \strng{fullhash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{bibnamehash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{authorbibnamehash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{authornamehash}{5e7b50d01505e72b56c582aee2f97177}
+      \strng{authorfullhash}{55c2b56067a12a98d9d4da231d6615ce}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 10th IEEE International Symposium on High Performance Distributed Computing}
+      \field{title}{Grid Information Services for Distributed Resource Sharing}
+      \field{year}{2001}
+      \field{pages}{181\bibrangedash 194}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/HPDC.2001.945188
+      \endverb
+    \endentry
     \entry{eosc2022}{report}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=78c7cf0866a1e83613c73af1076a50ff}{%
@@ -119,6 +696,99 @@
       \field{pages}{115\bibrangedash 128}
       \range{pages}{14}
     \endentry
+    \entry{foster1998}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8914428e3e9744e946a970fbf5bdb02f}{%
+           family={Tsudik},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{32f4966cd83f40621488125c60c291cc}
+      \strng{bibnamehash}{32f4966cd83f40621488125c60c291cc}
+      \strng{authorbibnamehash}{32f4966cd83f40621488125c60c291cc}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{32f4966cd83f40621488125c60c291cc}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 5th ACM Conference on Computer and Communications Security}
+      \field{title}{A security architecture for computational grids}
+      \field{year}{1998}
+      \field{pages}{83\bibrangedash 92}
+      \range{pages}{10}
+    \endentry
+    \entry{foster2001}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{bibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authorbibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{3}
+      \field{title}{The anatomy of the grid: Enabling scalable virtual organizations}
+      \field{volume}{15}
+      \field{year}{2001}
+      \field{pages}{200\bibrangedash 222}
+      \range{pages}{23}
+    \endentry
     \entry{foster2002}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
@@ -152,6 +822,7 @@
       \strng{authorbibnamehash}{417a687e86732cab16ab62a1b5a548d6}
       \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
       \strng{authorfullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \field{extraname}{3}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{extradatescope}{labelyear}
@@ -166,6 +837,82 @@
       \field{year}{2002}
       \field{pages}{37\bibrangedash 46}
       \range{pages}{10}
+    \endentry
+    \entry{foster2005modeling}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3bf523b938a66979b10e8de1d0bb429c}{%
+           family={Czajkowski},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eadd7396706e406f691d9400f439050b}{%
+           family={Ferguson},
+           familyi={F\bibinitperiod},
+           given={D.\bibnamedelimi E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6b2cc84462765b7d08ecf71231df930}{%
+           family={Frey},
+           familyi={F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b81b7f641595cfbe3e19192d290ade44}{%
+           family={Graham},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a701e878b820e861ec6c14e028001781}{%
+           family={Maguire},
+           familyi={M\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3038688cf84028eda5f85419d0c4f61a}{%
+           family={Snelling},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{bibnamehash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{authorbibnamehash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{9252717c12a6e4dfe273c1012238566b}
+      \field{extraname}{4}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{number}{3}
+      \field{title}{Modeling and managing state in distributed systems: The role of {OGSI} and {WSRF}}
+      \field{volume}{93}
+      \field{year}{2005}
+      \field{pages}{604\bibrangedash 612}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/JPROC.2004.842766
+      \endverb
     \endentry
     \entry{grigoryeva2024}{article}{}
       \name{author}{2}{}{%
@@ -200,6 +947,128 @@
       \field{title}{Grid computing evolution in scientific applications}
       \field{volume}{11}
       \field{year}{2024}
+    \endentry
+    \entry{hegde2024}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=efd3ebbb4d6fa4fc0ba0d64590c7c8f3}{%
+           family={Hegde},
+           familyi={H\bibinitperiod},
+           given={S.\bibnamedelimi N.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c4379b26bb272cc293b7dacc5f90e5d6}{%
+           family={Srinivas},
+           familyi={S\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c58aae7cd6f20e04241474c3c188cfa4}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06ddcdf4136bf8ea251cb47a832065db}{%
+           family={Nataraj},
+           familyi={N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2c56f5e21c751c3811a39eae07e20c45}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={B.\bibnamedelimi P.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c17b4f5e648d467ba47591e39b8af914}{%
+           family={Suresh},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi N.},
+           giveni={H\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4986a18272a54e87a9bdad04ec947ce0}
+      \strng{fullhash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{bibnamehash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{authorbibnamehash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{authornamehash}{4986a18272a54e87a9bdad04ec947ce0}
+      \strng{authorfullhash}{1ca1b7c2311713f06f361a5e893072ea}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Multi-objective and multi-constrained task scheduling framework for computational grids}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{pages}{6521}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-024-56957-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41598-024-56957-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41598-024-56957-8
+      \endverb
+    \endentry
+    \entry{memon2016glue}{report}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=dac2b86472fa6bb5da0b0263c9ddb1ba}{%
+           family={Memon},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcbe05c3e25be47c7ccb07ed0c8423ee}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d7b3636e08600d885a15cf775a23f97}{%
+           family={Meredith},
+           familyi={M\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3212c255ef3e364c033d955891c0ea3}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Open Grid Forum}%
+      }
+      \strng{namehash}{0e3d9013cde3fac127977ef851e93b23}
+      \strng{fullhash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{bibnamehash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{authorbibnamehash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{authornamehash}{0e3d9013cde3fac127977ef851e93b23}
+      \strng{authorfullhash}{0de1f996a468fe497d7a16d1fcac3162}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{GFD-RP.219}
+      \field{title}{{GLUE} v. 2.0: Reference realisation to {JSON} schema}
+      \field{type}{Document}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://ogf.org/documents/GFD.219.pdf
+      \endverb
+      \verb{url}
+      \verb https://ogf.org/documents/GFD.219.pdf
+      \endverb
     \endentry
     \entry{snelling2009}{article}{}
       \name{author}{7}{}{%
@@ -264,9 +1133,868 @@
       \field{title}{An Open Grid Services Architecture primer}
       \field{volume}{9}
       \field{year}{2009}
+    \endentry
+    \entry{condor2005}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=35631e8816c46670bdd5f36f84bd54dc}{%
+           family={Thain},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32638244b2578fd5b2293228330dc45d}{%
+           family={Tannenbaum},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b32c4d6332b2aafd05d0adb6010d97ad}{%
+           family={Livny},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d95768ed41073606ab7623dc040a9d5f}
+      \strng{fullhash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{bibnamehash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{authorbibnamehash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{authornamehash}{d95768ed41073606ab7623dc040a9d5f}
+      \strng{authorfullhash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Concurrency and Computation: Practice and Experience}
+      \field{number}{2--4}
+      \field{title}{Distributed computing in practice: The Condor experience}
+      \field{volume}{17}
+      \field{year}{2005}
+      \field{pages}{323\bibrangedash 356}
+      \range{pages}{34}
+    \endentry
+    \entry{turilli2018pilot}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c6ee2a379959dacc09fc4dc3d8b14dfc}{%
+           family={Turilli},
+           familyi={T\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2383d1035fa9318fc977e93e2f0c983}{%
+           family={Santcroos},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3503d898a994c9a448339412ce4a7978}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Shantenu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b568829590cef3ba27af6b6a53fcef42}
+      \strng{fullhash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{bibnamehash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{authorbibnamehash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{authornamehash}{b568829590cef3ba27af6b6a53fcef42}
+      \strng{authorfullhash}{2586ab31656ac95d29da378b644f6aa8}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{2}
+      \field{title}{A comprehensive perspective on pilot-job systems}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 32}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1145/3177851
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1508.04180
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1508.04180
+      \endverb
+    \endentry
+    \entry{wu2025task}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=ec4ca55731a5a2988923a4a4c268860b}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yujian},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7298b1a0ee0052f3a7d6b391079d86cf}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Shanjiang},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=068a94495d691f71b216ed4dfe8758e4}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Ce},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68d4747f396b8c8dd2209ca3a8ea466a}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66532e95d3186bb13ada8096abddf41d}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9768db14f07b0c90e7221e6ea5a72db}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2ca889317058c69503dbb6a23a2ca145}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Hutong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0cfec85ac81b59295184e63f5f0eacf3}
+      \strng{fullhash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{bibnamehash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{authorbibnamehash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{authornamehash}{0cfec85ac81b59295184e63f5f0eacf3}
+      \strng{authorfullhash}{d9a2e120aea06f25f6085d52a3f13466}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+      \field{note}{Manuscript received January 26, 2025}
+      \field{title}{Task Scheduling in Geo-Distributed Computing: A Survey}
+      \field{year}{2025}
+    \endentry
+    \entry{slurm2003}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=65f9279b66a00018ed42a3b38083f5d0}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={A.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1de5a7376302fd2d79d89cb3fa49a9a}{%
+           family={Jette},
+           familyi={J\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d13202b7b7d166918dde059435b9a2b8}{%
+           family={Grondona},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=9f8d6260ee76a91dfff747ffe5c881b9}{%
+           family={Feitelson},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1ff053b64c2cef8d0190c6b63aa3e0f9}{%
+           family={Rudolph},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=efea8ce9c03e65bfe3c646b16c3936b4}{%
+           family={Schwiegelshohn},
+           familyi={S\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{38677083dac8e823014d9b315c62e6fc}
+      \strng{fullhash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{bibnamehash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{authorbibnamehash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{authornamehash}{38677083dac8e823014d9b315c62e6fc}
+      \strng{authorfullhash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{editorbibnamehash}{a499af5d16776de2dc341f033b05f49a}
+      \strng{editornamehash}{1a76c17254229e041590b79edd458b3b}
+      \strng{editorfullhash}{a499af5d16776de2dc341f033b05f49a}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Job Scheduling Strategies for Parallel Processing}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{SLURM: Simple Linux Utility for Resource Management}
+      \field{volume}{2862}
+      \field{year}{2003}
+      \field{pages}{44\bibrangedash 60}
+      \range{pages}{17}
+    \endentry
+    \entry{zrigui2022online}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=773f12ec3bc9c4721e2091b2ef962f7a}{%
+           family={Zrigui},
+           familyi={Z\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59411605ef2acf19b1466496056954a8}{%
+           family={Camargo},
+           familyi={C\bibinitperiod},
+           given={R.\bibnamedelimi Y.},
+           giveni={R\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=7cf794566895109286561c7ca79ab2e0}{%
+           family={Legrand},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=849564dadcc71f0e64699cbc51cbf538}{%
+           family={Trystram},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2c6e3961b1ca8c2aeb983c4c29b40c5d}
+      \strng{fullhash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{bibnamehash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{authorbibnamehash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{authornamehash}{2c6e3961b1ca8c2aeb983c4c29b40c5d}
+      \strng{authorfullhash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Parallel and Distributed Computing}
+      \field{title}{Improving the performance of batch schedulers using online job runtime classification}
+      \field{volume}{164}
+      \field{year}{2022}
+      \field{pages}{83\bibrangedash 95}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.jpdc.2022.01.003
+      \endverb
+      \verb{urlraw}
+      \verb https://hal.science/hal-03023222v2/document
+      \endverb
+      \verb{url}
+      \verb https://hal.science/hal-03023222v2/document
+      \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
+    \entry{adimora2025hpc}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=05fab01a68500ffb9ab4d1b605d1c6a7}{%
+           family={Adimora},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fdd3b9d1113e00163cad449e5a148da9}{%
+           family={Gundla},
+           familyi={G\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4986615fe9031edfa590ac244b5c4dec}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ca763800fbf7c09c892319901a670052}
+      \strng{fullhash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{bibnamehash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{authorbibnamehash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \strng{authornamehash}{ca763800fbf7c09c892319901a670052}
+      \strng{authorfullhash}{e6450d4776bc863185e330dfd4d1b3ed}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cluster Computing}
+      \field{title}{Machine learning approaches for optimizing high-performance computing scheduling: {A} comprehensive survey and analysis}
+      \field{volume}{28}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1007/s10586-025-05521-8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10586-025-05521-8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10586-025-05521-8
+      \endverb
+    \endentry
+    \entry{aimar2019monit}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=e7c86c712247d37ad83caf2ea21ffc16}{%
+           family={Aimar},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f52787196f27df68bf6575cd37adb2f}{%
+           family={Aguado\bibnamedelima Corman},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edfc9932118ebdf27da5bbc795a8820b}{%
+           family={Andrade},
+           familyi={A\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17a40b5fbd9028e3d5dee6571a4be13b}{%
+           family={Delgado\bibnamedelima Fernandez},
+           familyi={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=790cdae57e0a42a5a28ead2843c56255}{%
+           family={Garrido\bibnamedelima Bear},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4bc2e718fbba1f4504e59c1950aca57}{%
+           family={Karavakis},
+           familyi={K\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae6f30e69ae6272b2b56bca0b33ae31f}{%
+           family={Marek\bibnamedelima Kulikowski},
+           familyi={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4008930e96753ac27321e1282e007df}{%
+           family={Magnoni},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{084e69e5bd427bf2ae026bec5f2b6fb6}
+      \strng{fullhash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{bibnamehash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{authorbibnamehash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \strng{authornamehash}{084e69e5bd427bf2ae026bec5f2b6fb6}
+      \strng{authorfullhash}{09753db3303f1a55e8b86176bc6fa4f8}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EPJ Web of Conferences}
+      \field{title}{{MONIT}: Monitoring the {CERN} data centres and the {WLCG} infrastructure}
+      \field{volume}{214}
+      \field{year}{2019}
+      \field{pages}{08031}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1051/epjconf/201921408031
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1051/epjconf/201921408031
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1051/epjconf/201921408031
+      \endverb
+    \endentry
+    \entry{andreeva2010dashboard}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a1bdea6bc3d66bb92a8a0e6406f89a84}{%
+           family={Andreeva},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7c86c712247d37ad83caf2ea21ffc16}{%
+           family={Aimar},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=052a4b2f7c2cc7397aef4848b445e453}{%
+           family={Kerekes},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8213761f234f9ac22bebbde87ebb658a}{%
+           family={Saiz},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4dfe404f792782143f6c607f05f65e54}
+      \strng{fullhash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{bibnamehash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{authorbibnamehash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \strng{authornamehash}{4dfe404f792782143f6c607f05f65e54}
+      \strng{authorfullhash}{11bf0a708d2e56b67b1f6d64e25d2af9}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Grid Computing}
+      \field{number}{3}
+      \field{title}{Experiment dashboard for monitoring computing activities of the {LHC} virtual organizations}
+      \field{volume}{8}
+      \field{year}{2010}
+      \field{pages}{323\bibrangedash 339}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s10723-010-9148-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10723-010-9148-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10723-010-9148-x
+      \endverb
+    \endentry
+    \entry{andreozzi2009glue}{report}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=e56c615c9db273ef49a87630d1f275cb}{%
+           family={Andreozzi},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=534d02e99991362a90b03b6ed79224a1}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b97cda1c76fe1429c590b68f056df77e}{%
+           family={Ehm},
+           familyi={E\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e89060b3d91a101fd88b7d9427e65118}{%
+           family={Field},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d193865e9b70f1adff4a0ac45f71319d}{%
+           family={Galang},
+           familyi={G\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=605a25df2e5632af4d8ab6786f8bbe33}{%
+           family={Konya},
+           familyi={K\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f960fb127d795361e072b1cea0c73bb0}{%
+           family={Litmaath},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=34cfd75fae4f6315757874e1b6540fef}{%
+           family={Millar},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3212c255ef3e364c033d955891c0ea3}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Open Grid Forum}%
+      }
+      \strng{namehash}{b0402049ebf366752667479b1d7326a9}
+      \strng{fullhash}{80cbd04f86d75e899d843f783051039d}
+      \strng{bibnamehash}{80cbd04f86d75e899d843f783051039d}
+      \strng{authorbibnamehash}{80cbd04f86d75e899d843f783051039d}
+      \strng{authornamehash}{b0402049ebf366752667479b1d7326a9}
+      \strng{authorfullhash}{80cbd04f86d75e899d843f783051039d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{GFD.147}
+      \field{title}{{GLUE} specification v. 2.0}
+      \field{type}{Recommendation}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://www.ogf.org/documents/GFD.147.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ogf.org/documents/GFD.147.pdf
+      \endverb
+    \endentry
+    \entry{burke2011}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=534d02e99991362a90b03b6ed79224a1}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e89060b3d91a101fd88b7d9427e65118}{%
+           family={Field},
+           familyi={F\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d539e8d649be510eda593e621069dc3}{%
+           family={Horat},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5f7ce25aa0f5c47f507b9690cf193183}
+      \strng{fullhash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{bibnamehash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{authorbibnamehash}{3590dec19c5c3abcbefb82f6925939d5}
+      \strng{authornamehash}{5f7ce25aa0f5c47f507b9690cf193183}
+      \strng{authorfullhash}{3590dec19c5c3abcbefb82f6925939d5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Physics: Conference Series}
+      \field{number}{6}
+      \field{title}{Migration to the {GLUE} 2.0 information schema in the {LCG/EGEE/EGI} production {Grid}}
+      \field{volume}{331}
+      \field{year}{2011}
+      \field{pages}{062004}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1742-6596/331/6/062004
+      \endverb
+      \verb{urlraw}
+      \verb https://iopscience.iop.org/article/10.1088/1742-6596/331/6/062004/pdf
+      \endverb
+      \verb{url}
+      \verb https://iopscience.iop.org/article/10.1088/1742-6596/331/6/062004/pdf
+      \endverb
+    \endentry
+    \entry{calatrava2023}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=45f95697236d4b970d1498f5b3d0b20c}{%
+           family={Calatrava},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=116472a54461ce1fd86f8117ef133b93}{%
+           family={Asorey},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2c74aab33c3d1cce9d5365a5ea91df22}{%
+           family={Astalos},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48c42855720d4056a71f6e69b5091eca}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=659ecd4a0feefa3feb19e07571a47729}{%
+           family={Benincasa},
+           familyi={B\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7467f1d6b18c0a881bb5910048060c22}{%
+           family={Blanquer},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=35124d693965921fa7cc574cbbe0aa04}{%
+           family={Sánchez-Ferrero},
+           familyi={S\bibinithyphendelim F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a4a1cd34c6e22bec170306166325dcc3}
+      \strng{fullhash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{bibnamehash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{authorbibnamehash}{1826238f107d143e7f2fa30298f015e1}
+      \strng{authornamehash}{a4a1cd34c6e22bec170306166325dcc3}
+      \strng{authorfullhash}{1826238f107d143e7f2fa30298f015e1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Science Review}
+      \field{title}{A survey of the {European Open Science Cloud} services for expanding the capacity and capabilities of multidisciplinary scientific applications}
+      \field{volume}{49}
+      \field{year}{2023}
+      \field{pages}{100571}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cosrev.2023.100571
+      \endverb
+    \endentry
+    \entry{casagrande2022green}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5b4701b543bb364525989a39f7f0519b}{%
+           family={Casagrande},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ead8fa4b9fa3d704fb7e117dc5357d16}{%
+           family={Koslovski},
+           familyi={K\bibinitperiod},
+           given={G.\bibnamedelimi P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=82da70637dedf2ee587549aec9f62b46}{%
+           family={Miers},
+           familyi={M\bibinitperiod},
+           given={C.\bibnamedelimi C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1cb7e66cd5fdeff23d2d01ca4532bde3}{%
+           family={Pillon},
+           familyi={P\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3d51b9aad49becb7d46cec4f741d104}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46b5fed74d5552e361c5535a0e9a0d79}
+      \strng{fullhash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{bibnamehash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{authorbibnamehash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \strng{authornamehash}{46b5fed74d5552e361c5535a0e9a0d79}
+      \strng{authorfullhash}{d3f1de58de1f7cedc003bda20d2266bb}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Grid and Utility Computing}
+      \field{number}{6}
+      \field{title}{Don’t hurry, be green: {S}cheduling server shutdowns in grid computing with deep reinforcement learning}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{589\bibrangedash 606}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1504/IJGUC.2022.128303
+      \endverb
+      \verb{urlraw}
+      \verb https://gkoslovski.github.io/files/ijguc-2022-01.pdf
+      \endverb
+      \verb{url}
+      \verb https://gkoslovski.github.io/files/ijguc-2022-01.pdf
+      \endverb
+    \endentry
+    \entry{chard2023}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=5ff463e31dcfc6ad54a94ea306b69218}{%
+           family={Chard},
+           familyi={C\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d6ddebce17ac0a5e9d84e607c813fd4}{%
+           family={Pruyne},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf17d10b5ce6a7d00b4c30d6c02f70b5}{%
+           family={McKee},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa76c1ee0c802e8d4caea5d653da564d}{%
+           family={Bryan},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18f77583723316dd0c80c4cc1a1e64ed}{%
+           family={Raumann},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4225a6254d56f1d9beb686e6eaef78e2}{%
+           family={Ananthakrishnan},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f8a1c82a9379d533baf507a4cca2d79}{%
+           family={Chard},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{100e1779c1bcafbe03deb528de02200d}
+      \strng{fullhash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{bibnamehash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{authorbibnamehash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \strng{authornamehash}{100e1779c1bcafbe03deb528de02200d}
+      \strng{authorfullhash}{ba7c15f54b5edb9f9d2389f7b5a5566c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Future Generation Computer Systems}
+      \field{title}{Globus automation services: Research process automation across the space–time continuum}
+      \field{volume}{141}
+      \field{year}{2023}
+      \field{pages}{334\bibrangedash 347}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.future.2022.11.026
+      \endverb
+    \endentry
+    \entry{czajkowski2001}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3bf523b938a66979b10e8de1d0bb429c}{%
+           family={Czajkowski},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a19b3fe282b397516438c4a796d13ac9}{%
+           family={Fitzgerald},
+           familyi={F\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{5e7b50d01505e72b56c582aee2f97177}
+      \strng{fullhash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{bibnamehash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{authorbibnamehash}{55c2b56067a12a98d9d4da231d6615ce}
+      \strng{authornamehash}{5e7b50d01505e72b56c582aee2f97177}
+      \strng{authorfullhash}{55c2b56067a12a98d9d4da231d6615ce}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 10th IEEE International Symposium on High Performance Distributed Computing}
+      \field{title}{Grid Information Services for Distributed Resource Sharing}
+      \field{year}{2001}
+      \field{pages}{181\bibrangedash 194}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/HPDC.2001.945188
+      \endverb
+    \endentry
     \entry{eosc2022}{report}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=78c7cf0866a1e83613c73af1076a50ff}{%
@@ -329,6 +2057,82 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.1007/s11390-006-0513-y
+      \endverb
+    \endentry
+    \entry{foster2005modeling}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3bf523b938a66979b10e8de1d0bb429c}{%
+           family={Czajkowski},
+           familyi={C\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eadd7396706e406f691d9400f439050b}{%
+           family={Ferguson},
+           familyi={F\bibinitperiod},
+           given={D.\bibnamedelimi E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6b2cc84462765b7d08ecf71231df930}{%
+           family={Frey},
+           familyi={F\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b81b7f641595cfbe3e19192d290ade44}{%
+           family={Graham},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a701e878b820e861ec6c14e028001781}{%
+           family={Maguire},
+           familyi={M\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3038688cf84028eda5f85419d0c4f61a}{%
+           family={Snelling},
+           familyi={S\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{bibnamehash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{authorbibnamehash}{9252717c12a6e4dfe273c1012238566b}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{9252717c12a6e4dfe273c1012238566b}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{number}{3}
+      \field{title}{Modeling and managing state in distributed systems: The role of {OGSI} and {WSRF}}
+      \field{volume}{93}
+      \field{year}{2005}
+      \field{pages}{604\bibrangedash 612}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/JPROC.2004.842766
       \endverb
     \endentry
     \entry{foster1997}{article}{}
@@ -400,6 +2204,7 @@
       \strng{authorbibnamehash}{417a687e86732cab16ab62a1b5a548d6}
       \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
       \strng{authorfullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \field{extraname}{2}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{extradatescope}{labelyear}
@@ -414,6 +2219,99 @@
       \field{year}{2002}
       \field{pages}{37\bibrangedash 46}
       \range{pages}{10}
+    \endentry
+    \entry{foster1998}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8914428e3e9744e946a970fbf5bdb02f}{%
+           family={Tsudik},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{32f4966cd83f40621488125c60c291cc}
+      \strng{bibnamehash}{32f4966cd83f40621488125c60c291cc}
+      \strng{authorbibnamehash}{32f4966cd83f40621488125c60c291cc}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{32f4966cd83f40621488125c60c291cc}
+      \field{extraname}{3}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 5th ACM Conference on Computer and Communications Security}
+      \field{title}{A security architecture for computational grids}
+      \field{year}{1998}
+      \field{pages}{83\bibrangedash 92}
+      \range{pages}{10}
+    \endentry
+    \entry{foster2001}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{bibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authorbibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \field{extraname}{4}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{3}
+      \field{title}{The anatomy of the grid: Enabling scalable virtual organizations}
+      \field{volume}{15}
+      \field{year}{2001}
+      \field{pages}{200\bibrangedash 222}
+      \range{pages}{23}
     \endentry
     \entry{grigoryeva2024}{article}{}
       \name{author}{2}{}{%
@@ -448,6 +2346,128 @@
       \field{title}{Grid computing evolution in scientific applications}
       \field{volume}{11}
       \field{year}{2024}
+    \endentry
+    \entry{hegde2024}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=efd3ebbb4d6fa4fc0ba0d64590c7c8f3}{%
+           family={Hegde},
+           familyi={H\bibinitperiod},
+           given={S.\bibnamedelimi N.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c4379b26bb272cc293b7dacc5f90e5d6}{%
+           family={Srinivas},
+           familyi={S\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c58aae7cd6f20e04241474c3c188cfa4}{%
+           family={Rajan},
+           familyi={R\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06ddcdf4136bf8ea251cb47a832065db}{%
+           family={Nataraj},
+           familyi={N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2c56f5e21c751c3811a39eae07e20c45}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={B.\bibnamedelimi P.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c17b4f5e648d467ba47591e39b8af914}{%
+           family={Suresh},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi N.},
+           giveni={H\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4986a18272a54e87a9bdad04ec947ce0}
+      \strng{fullhash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{bibnamehash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{authorbibnamehash}{1ca1b7c2311713f06f361a5e893072ea}
+      \strng{authornamehash}{4986a18272a54e87a9bdad04ec947ce0}
+      \strng{authorfullhash}{1ca1b7c2311713f06f361a5e893072ea}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Multi-objective and multi-constrained task scheduling framework for computational grids}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{pages}{6521}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-024-56957-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41598-024-56957-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41598-024-56957-8
+      \endverb
+    \endentry
+    \entry{memon2016glue}{report}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=dac2b86472fa6bb5da0b0263c9ddb1ba}{%
+           family={Memon},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcbe05c3e25be47c7ccb07ed0c8423ee}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d7b3636e08600d885a15cf775a23f97}{%
+           family={Meredith},
+           familyi={M\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3212c255ef3e364c033d955891c0ea3}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Open Grid Forum}%
+      }
+      \strng{namehash}{0e3d9013cde3fac127977ef851e93b23}
+      \strng{fullhash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{bibnamehash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{authorbibnamehash}{0de1f996a468fe497d7a16d1fcac3162}
+      \strng{authornamehash}{0e3d9013cde3fac127977ef851e93b23}
+      \strng{authorfullhash}{0de1f996a468fe497d7a16d1fcac3162}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{GFD-RP.219}
+      \field{title}{{GLUE} v. 2.0: Reference realisation to {JSON} schema}
+      \field{type}{Document}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://ogf.org/documents/GFD.219.pdf
+      \endverb
+      \verb{url}
+      \verb https://ogf.org/documents/GFD.219.pdf
+      \endverb
     \endentry
     \entry{snelling2009}{article}{}
       \name{author}{7}{}{%
@@ -512,6 +2532,288 @@
       \field{title}{An Open Grid Services Architecture primer}
       \field{volume}{9}
       \field{year}{2009}
+    \endentry
+    \entry{condor2005}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=35631e8816c46670bdd5f36f84bd54dc}{%
+           family={Thain},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32638244b2578fd5b2293228330dc45d}{%
+           family={Tannenbaum},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b32c4d6332b2aafd05d0adb6010d97ad}{%
+           family={Livny},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d95768ed41073606ab7623dc040a9d5f}
+      \strng{fullhash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{bibnamehash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{authorbibnamehash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \strng{authornamehash}{d95768ed41073606ab7623dc040a9d5f}
+      \strng{authorfullhash}{a0fa642e6d49eff4452e9162ac1b3a3a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Concurrency and Computation: Practice and Experience}
+      \field{number}{2--4}
+      \field{title}{Distributed computing in practice: The Condor experience}
+      \field{volume}{17}
+      \field{year}{2005}
+      \field{pages}{323\bibrangedash 356}
+      \range{pages}{34}
+    \endentry
+    \entry{turilli2018pilot}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c6ee2a379959dacc09fc4dc3d8b14dfc}{%
+           family={Turilli},
+           familyi={T\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2383d1035fa9318fc977e93e2f0c983}{%
+           family={Santcroos},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3503d898a994c9a448339412ce4a7978}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Shantenu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b568829590cef3ba27af6b6a53fcef42}
+      \strng{fullhash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{bibnamehash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{authorbibnamehash}{2586ab31656ac95d29da378b644f6aa8}
+      \strng{authornamehash}{b568829590cef3ba27af6b6a53fcef42}
+      \strng{authorfullhash}{2586ab31656ac95d29da378b644f6aa8}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{2}
+      \field{title}{A comprehensive perspective on pilot-job systems}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 32}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1145/3177851
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1508.04180
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1508.04180
+      \endverb
+    \endentry
+    \entry{wu2025task}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=ec4ca55731a5a2988923a4a4c268860b}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yujian},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7298b1a0ee0052f3a7d6b391079d86cf}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Shanjiang},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=068a94495d691f71b216ed4dfe8758e4}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Ce},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68d4747f396b8c8dd2209ca3a8ea466a}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66532e95d3186bb13ada8096abddf41d}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9768db14f07b0c90e7221e6ea5a72db}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2ca889317058c69503dbb6a23a2ca145}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Hutong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0cfec85ac81b59295184e63f5f0eacf3}
+      \strng{fullhash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{bibnamehash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{authorbibnamehash}{d9a2e120aea06f25f6085d52a3f13466}
+      \strng{authornamehash}{0cfec85ac81b59295184e63f5f0eacf3}
+      \strng{authorfullhash}{d9a2e120aea06f25f6085d52a3f13466}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+      \field{note}{Manuscript received January 26, 2025}
+      \field{title}{Task Scheduling in Geo-Distributed Computing: A Survey}
+      \field{year}{2025}
+    \endentry
+    \entry{slurm2003}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=65f9279b66a00018ed42a3b38083f5d0}{%
+           family={Yoo},
+           familyi={Y\bibinitperiod},
+           given={A.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1de5a7376302fd2d79d89cb3fa49a9a}{%
+           family={Jette},
+           familyi={J\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d13202b7b7d166918dde059435b9a2b8}{%
+           family={Grondona},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=9f8d6260ee76a91dfff747ffe5c881b9}{%
+           family={Feitelson},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1ff053b64c2cef8d0190c6b63aa3e0f9}{%
+           family={Rudolph},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=efea8ce9c03e65bfe3c646b16c3936b4}{%
+           family={Schwiegelshohn},
+           familyi={S\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{38677083dac8e823014d9b315c62e6fc}
+      \strng{fullhash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{bibnamehash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{authorbibnamehash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{authornamehash}{38677083dac8e823014d9b315c62e6fc}
+      \strng{authorfullhash}{c325731033bb4ff6e8e0738c033b440f}
+      \strng{editorbibnamehash}{a499af5d16776de2dc341f033b05f49a}
+      \strng{editornamehash}{1a76c17254229e041590b79edd458b3b}
+      \strng{editorfullhash}{a499af5d16776de2dc341f033b05f49a}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Job Scheduling Strategies for Parallel Processing}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{SLURM: Simple Linux Utility for Resource Management}
+      \field{volume}{2862}
+      \field{year}{2003}
+      \field{pages}{44\bibrangedash 60}
+      \range{pages}{17}
+    \endentry
+    \entry{zrigui2022online}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=773f12ec3bc9c4721e2091b2ef962f7a}{%
+           family={Zrigui},
+           familyi={Z\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59411605ef2acf19b1466496056954a8}{%
+           family={Camargo},
+           familyi={C\bibinitperiod},
+           given={R.\bibnamedelimi Y.},
+           giveni={R\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=7cf794566895109286561c7ca79ab2e0}{%
+           family={Legrand},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=849564dadcc71f0e64699cbc51cbf538}{%
+           family={Trystram},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2c6e3961b1ca8c2aeb983c4c29b40c5d}
+      \strng{fullhash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{bibnamehash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{authorbibnamehash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \strng{authornamehash}{2c6e3961b1ca8c2aeb983c4c29b40c5d}
+      \strng{authorfullhash}{c9dec6edc70efc675a8d1a635bce3bb6}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Parallel and Distributed Computing}
+      \field{title}{Improving the performance of batch schedulers using online job runtime classification}
+      \field{volume}{164}
+      \field{year}{2022}
+      \field{pages}{83\bibrangedash 95}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.jpdc.2022.01.003
+      \endverb
+      \verb{urlraw}
+      \verb https://hal.science/hal-03023222v2/document
+      \endverb
+      \verb{url}
+      \verb https://hal.science/hal-03023222v2/document
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

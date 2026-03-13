@@ -78,8 +78,8 @@
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction} % Adds unnumbered intro to TOC
 
-\section{Grid Computing Architectures}
-\subsection{The Architgitectural Design Challenge}
+\section*{Grid Computing Architectures}
+\subsection*{The Architgitectural Design Challenge}
 Designing an architecture for Distributed Grid Computing requires resolving a fundamental tension: 
 the architecture must be flexible enough to accommodate the enormous heterogeneity of grid resources 
 and use cases, yet standardised enough to enable interoperability across administrative boundaries. 
@@ -116,18 +116,325 @@ Interoperability across administrative boundaries requires not only common proto
     the WLCG to the EGI, and remains the central challenge for EOSC as it attempts to federate an unprecedentedly
      diverse ecosystem of European research services \parencite{eosc2022}.
 
+\subsection*{The Five-Layer Hourglass Architecture}
+Section 1.1 established that the central challenge of grid architecture is resolving the tension between flexibility and 
+standardisation. The five-layer hourglass model, formally articulated by Foster, Kesselman, and Tuecke \parencite{foster2001}in their 
+foundational paper “The Anatomy of the Grid,” is the architecture that directly addresses this tension. The hourglass metaphor is
+ deliberate and precise: a small, essential set of protocols at the narrow waist of the hourglass connects a diverse collection of 
+ resources below to a diverse collection of applications above. Foster et al. \parencite{foster2001} describe this narrow neck as consisting of the
+  Resource and Connectivity protocol layers, which are “designed so that they can be implemented on top of a diverse range of resource 
+  types, defined at the fabric layer, and can in turn be used to construct a wide range of global services and application-specific
+   behaviors at the collective layer.” This minimalist core is precisely what allows the architecture to accommodate heterogeneity 
+   on both sides while enabling interoperability — the balance that Section 1.1 identified as the defining design challenge of the field. 
+   Grigoryeva and Klimentov \parencite{grigoryeva2024} confirm that this hourglass principle has remained the defining structural feature of grid architectures 
+   across thirty years of evolution, surviving the transition from protocol-centric Globus to service-oriented OGSA to contemporary federated
+    cloud deployments.
 
+\subsubsection{Fabric Layer}
+    The Fabric layer comprises the physical and logical resources that grid computing aggregates: processors and computational clusters,
+     mass storage systems, databases and scientific data archives, network infrastructure, and specialised instruments such as radio telescopes
+      and genomic sequencers. As Foster et al. \parencite{foster2001} describe it, “the basic Fabric elements are the same in each case: computers, storage 
+      systems, and networks.” Each Fabric layer resource is managed by a local resource management system (LRMS) — also called a batch
+       scheduler — that enforces site-specific access policies and executes submitted jobs. The LRMS is the point at which the grid meets
+        institutional autonomy: it is the local administrator’s tool for enforcing site policy, and the grid architecture explicitly 
+        respects rather than overrides it. Widely deployed LRMS platforms include SLURM (Simple Linux Utility for Resource Management), 
+        developed at Lawrence Livermore National Laboratory and now the dominant scheduler on Top500 supercomputers \parencite{slurm2003}; 
+        HTCondor, developed at the University of Wisconsin-Madison for high-throughput opportunistic workloads \parencite{condor2005};
+         PBS/TORQUE; and IBM’s LSF. Critically, Fabric layer resources retain full autonomy under their local administrators: the hourglass 
+         architecture is designed so that participating sites do not surrender control of their resources to the grid — a design principle that
+          distinguishes grid computing from cloud computing and is essential to securing institutional participation \parencite{foster2001}.
 
-\subsection{The Five-Layer Hourglass Architecture}
+     \subsubsection{Connectivity Layer}
+    The Connectivity layer is the first of the two protocol layers that form the “narrow neck” of the hourglass — the standardised core 
+     that enables the entire architecture. It defines the core communication and authentication protocols that enable grid-specific network
+      transactions across diverse administrative domains. \parencite{foster2001} specify that this layer must satisfy three fundamental requirements: 
+      single sign-on, so that users authenticate once and access multiple resources without further interaction; mutual authentication, 
+     so that both user and resource verify each other’s identity; and delegation, so that a service acting on a user’s behalf can present 
+      the user’s credentials to other services. These requirements are implemented through the Grid Security Infrastructure (GSI), which builds 
+     upon X.509 Public Key Infrastructure (PKI) standards. Foster, Kesselman, Tsudik, and Tuecke \parencite{foster1998} designed GSI specifically to address 
+     the security requirements of multi-institutional grid environments, observing that conventional single-domain security systems cannot 
+  accommodate the combination of single sign-on, credential delegation, and site-controlled access policies required in a grid context. 
+     The protocols of the Connectivity layer are kept deliberately minimal — just enough to establish authenticated, encrypted communication 
+     channels — with all higher-level coordination delegated to the layers above, in accordance with the hourglass principle established in Section 1.1.
 
-\subsection{The Open Grid Services Architecture (OGSA)}
-\section{Resource Management and Scheduling}
+    \subsubsection{Resource Layer}
+    The Resource layer, the second component of the hourglass’s narrow neck, defines protocols for the negotiation, initiation, monitoring, 
+    control, accounting, and payment associated with sharing individual resources. It is important to note what this layer does not do: it
+     deliberately restricts its scope to interactions with a single resource at a time, leaving the coordination of multiple resources to 
+     the Collective layer above. This deliberate constraint is a direct expression of the hourglass design principle identified in Section 1.1 — by 
+     keeping the Resource layer minimal and single-resource-focused, the architecture ensures that any resource capable of implementing these
+      protocols can participate in the grid, regardless of its type or local configuration. As Foster et al. \parencite{foster2001} note in 
+      their description of the Anatomy architecture, the Grid Resource Allocation and Management (GRAM) enables grid jobs to be submitted to any participating site regardless of the 
+      site’s underlying batch system, because the local LRMS is wrapped behind the standard GRAM interface — a concrete example of the 
+      hourglass principle in action.
+
+    \subsubsection{Collective Layer}
+        The Collective layer is where the distinctive complexity of grid computing resides — and where the architectural principle of the 
+        hourglass yields its greatest value. Because Collective layer components build on the standardised narrow neck of the hourglass, 
+        they can implement a wide variety of sharing behaviours without placing new requirements on the resources being shared \parencite{foster2001}. 
+        This is the key architectural insight: the standardised Resource and Connectivity layers act as a stable platform upon which an open-ended 
+        diversity of Collective services can be built, without requiring changes to the underlying fabric. Services at the Collective layer include
+         directory and resource discovery services, which catalogue available resources using protocols such as GRIP and GRRP, as described 
+        by \textcite{czajkowski2001}; co-allocation and advance reservation services, which reserve multiple resources simultaneously for 
+        jobs requiring coordinated access; workload management and meta-scheduling services, which distribute jobs optimally across available resources;
+         data replication and management services; and monitoring and fault detection services. The Collective layer must accomplish global coordination 
+         without central control — each resource retains local autonomy under the Fabric layer’s LRMS — making the design of scalable, robust Collective 
+         services one of the most actively researched problems in distributed systems \parencite{grigoryeva2024}.
+
+        \subsubsection*{Application Layer}
+        The Application layer comprises the user-facing applications that exploit the grid through APIs and SDKs (Software Development Kits) 
+        exposed by the Collective and Resource layers. Foster et al. \parencite{foster2001} illustrate this layer with two contrasting examples — a high-throughput 
+        ray-tracing rendering application and a multidisciplinary simulation — demonstrating that while the application-level requirements differ
+         dramatically, both rely on the same underlying Fabric, Connectivity, Resource, and Collective layer services. Applications range from batch 
+         scientific simulation codes and parameter sweep studies to interactive data analysis portals and workflow management systems. The key 
+         architectural principle is transparency: applications interact with the grid through standard APIs and are insulated from the heterogeneity 
+         of the underlying fabric. As Grigoryeva and Klimentov \parencite{grigoryeva2024} observe, this transparency principle proved essential to the long-term adoption 
+         of grid computing, because it allowed application developers to target the grid API rather than the diverse hardware beneath it. The five-layer 
+         hourglass architecture thus demonstrates in concrete architectural terms how the tension identified in Section 1.1 — between flexibility and 
+         standardisation — can be resolved: standardise minimally and precisely at the narrow neck, and leave both the resources below and the
+          applications above free to evolve. This architectural logic is then extended and generalised in the Open Grid Services Architecture 
+          discussed in Section 1.3.
+
+\subsection*{The Open Grid Services Architecture (OGSA)}
+Section 1.2 demonstrated that the five-layer hourglass model deliberately keeps its protocol core minimal, enabling interoperability across 
+heterogeneous resources without demanding conformance to a rigid framework. By the early 2000s, however, a new challenge had emerged: the 
+growing dominance of web services technology in enterprise computing created pressure to align grid infrastructure with mainstream IT
+ standards so that grid resources could participate in service-oriented enterprise architectures. The Open Grid Services Architecture (OGSA)
+  was the direct response to this challenge. Formally introduced by Foster, Kesselman, Nick, and Tuecke \parencite{foster2002} in their paper “Grid Services 
+  for Distributed Systems Integration,” published in IEEE Computer, OGSA’s central contribution was the unification of the grid resource model 
+  with the web services model: every grid resource — whether a computational cluster, a storage system, or a scientific instrument — is exposed 
+  as a grid service conforming to a standardised WSDL-defined interface. This alignment with mainstream IT standards enabled grid infrastructure 
+  to interoperate with enterprise service-oriented architectures, significantly broadening the potential ecosystem of grid adopters \parencite{foster2002}. 
+  Snelling et al. \parencite{snelling2009}, in their IEEE Distributed Systems Online primer on OGSA, confirm that this standards alignment was decisive in achieving 
+  real-world interoperability: it allowed site architects to build standards-based grid components with confidence that they would be interoperable 
+  with other standards-based grids, and that the infrastructure could grow and adapt as organisational needs evolved.
+
+A technically critical innovation that OGSA introduced was the concept of Stateful Resources — resources that maintain persistent state across 
+multiple service invocations. This concept was essential because the conventional web services model, which OGSA was building upon, is inherently
+ stateless: each service invocation is independent, and no state is preserved between calls. For grid computing, however, statelessness is fundamentally 
+ inadequate. Core grid entities such as running jobs, active data transfers, advance reservations, and workflow executions are inherently stateful: they
+  are created at one point in time, evolve over hours or days, and must be consistently accessible and manageable throughout their lifetime. The technical 
+  framework for addressing this was the Web Services Resource Framework (WS-RF), proposed by Czajkowski, Ferguson, Foster, Frey, Graham, and Snelling (2004)
+   as a set of web services specifications defining how to associate a Web service with one or more stateful resources and expose the resource’s state 
+   through standard web service interfaces. 
+   
+   Foster, Czajkowski, Ferguson, Frey, Graham, Maguire, Snelling, and Tuecke \parencite{foster2005modeling}, in their peer-reviewed paper 
+   “Modeling and Managing State in Distributed Systems: The Role of OGSI and WSRF,” published in the Proceedings of the IEEE, provide the authoritative 
+   technical account of both the Open Grid Services Infrastructure (OGSI) — the first standardised implementation of OGSA’s stateful service 
+   concept — and WS-RF, which refactored and evolved OGSI to better align with industry web services standards. They explain that both OGSI
+    and WS-RF introduce “conventions on the use of the Web Services Definition Language schema that enable the modeling and management of state,” 
+    with WS-RF providing the more mature and broadly adopted rendering. The importance of this cannot be overstated for grid computing: without 
+    statefulness, a grid infrastructure could not track a distributed workflow spanning multiple sites over days or weeks, could not maintain 
+    reservation agreements negotiated between scheduling systems, and could not guarantee the consistency of long-running data transfers across
+     wide-area networks — all of which are routine requirements in production scientific grids such as the WLCG \parencite{grigoryeva2024}.
+
+\section*{Federated and Microservices Architectures}
+Section 1.3 showed that OGSA’s service-oriented approach, while technically sound, produced complex SOAP/WS-RF-based middleware that proved 
+difficult to deploy at scale across heterogeneous institutional environments. Contemporary production grid infrastructures have consequently 
+evolved in two complementary directions: toward federated governance models that formalise multi-stakeholder coordination, and toward
+ microservices architectures that reduce operational complexity by decomposing monolithic middleware into independently deployable service 
+ components. The European Grid Infrastructure (EGI) exemplifies the federated model at its most mature. EGI’s National Grid Initiatives 
+ (NGIs) are autonomous, officially recognised bodies that ensure the operation of grid infrastructures in their own country while representing
+  the needs of their scientific communities within the broader federation. EGI currently federates 39 National Grid Initiatives from European 
+  countries and European Intergovernmental Research Organisations. The critical architectural principle is that each NGI retains full sovereignty 
+  over its own resources and policies while conforming to common interoperability standards — exactly the tension between autonomy and standardisation
+   that Section 1.1 identified as the defining challenge of grid architecture. Calatrava et al. (2023), in their peer-reviewed survey of EOSC services
+    published in Computer Science Review, document how this federated governance model has been progressively extended beyond EGI toward the European 
+    Open Science Cloud, where federating institutions retain local control while participating in a common open science infrastructure governed through
+     agreed interoperability frameworks.
+
+The second direction of evolution — the adoption of microservices patterns from commercial cloud platforms — addresses a different problem: 
+the operational complexity that accumulated in monolithic grid middleware stacks such as the original Globus Toolkit, gLite, and early UNICORE.
+ Velepucha and Flores (2023), in their comprehensive survey published in IEEE Access, define microservices architecture as a style in which an 
+ application is decomposed into small, independently deployable services, each responsible for a distinct function and communicating through 
+ lightweight APIs. They identify the core architectural benefits as independent scalability, independent deployment, and technology heterogeneity 
+ — properties that are particularly attractive for grid middleware because different grid services (data transfer, job submission, authentication, 
+ workflow orchestration) have very different scaling and reliability requirements. The Globus platform, evolved from the monolithic Globus Toolkit 
+ through successive service-oriented redesigns, now exemplifies this approach in the scientific computing context: it is delivered as a set of
+  independently deployable cloud-hosted services accessible through REST APIs, encompassing Globus Transfer, Globus Auth, Globus Compute, and 
+  Globus Flows (Chard, Pruyne, McKee, Bryan, Raumann, Ananthakrishnan, & Foster, 2023). Chard et al. (2023), in their paper “Globus Automation 
+  Services” published in Future Generation Computer Systems, document how this microservices architecture enables research process automation 
+  across distributed infrastructure — precisely the kind of multi-site, long-running scientific workflow management that the Collective layer 
+  of Section 1.2’s hourglass architecture was designed for, but now implemented through cloud-native REST APIs rather than SOAP-based grid services. 
+  This architectural evolution has dramatically lowered the learning curve for application developers by replacing complex, heavyweight WS-RF service 
+  interfaces with familiar REST/JSON APIs that integrate naturally with modern programming environments. Alongside the shift to microservices,
+   production grid deployments have increasingly adopted containerisation — packaging grid software and scientific applications in 
+   Apptainer (formerly Singularity) or Docker containers — to address the software dependency management challenges that historically
+    complicated grid deployments across heterogeneous operating environments. Kurtzer, Sochat, and Bauer (2017), whose Singularity work has
+     evolved into the Apptainer project now used across major HPC and grid sites, demonstrated that user-space containers can provide reproducible,
+      portable execution environments without requiring root privileges — a critical constraint in multi-user grid environments where users cannot 
+      modify the host operating system.
+
+      \subsection*{The European Open Science Cloud and the GLUE Schema}
+      Section 1.4 described how federated governance models and microservices architectures have enabled the progressive integration 
+      of heterogeneous computing and data resources across institutional boundaries. The European Open Science Cloud (EOSC) represents 
+      the most ambitious current expression of this architectural trajectory. Formally initiated by the European Commission in 2016 and 
+      entering operational service through the EOSC EU Node launched in October 2024, EOSC aims to provide European researchers with an 
+      open, trusted, multi-disciplinary environment where they can publish, find, and reuse data, tools, and services for research and 
+      innovation \parencite{eosc2022}. 
+
+      EOSC is explicitly architected as a federation — described in official European Commission documentation as a “system of systems” — in which national research 
+      infrastructures, e-infrastructures such as EGI and GEANT, and thematic science clusters contribute services and data repositories
+       that are federated under a common governance framework and interoperability standard, without any single entity controlling the 
+       underlying resources. Calatrava et al. \parencite{calatrava2023}, in their peer-reviewed survey of EOSC services published in Computer Science Review,
+        document how the EOSC-Synergy project — involving more than 20 institutions from eight European countries — integrated thematic
+         scientific services across four domains (Earth Observation, Environment, Biomedicine, and Astrophysics) into the EOSC federation,
+          identifying federated authentication, FAIR data management, and cloud-agnostic resource management as the three key architectural
+           requirements for thematic service integration. The EOSC infrastructure consists of three interconnected technical layers: EOSC Core 
+           (providing cross-cutting services including single sign-on, resource catalogues, knowledge graphs, workflow management, and helpdesk);
+            EOSC Exchange (offering domain-facing services including compute, containers, data transfer, and notebooks); and the EOSC 
+            Interoperability Framework (defining the protocols, metadata formats, and standards that participating services must adopt 
+            to achieve cross-domain and cross-infrastructure interoperability) \parencite{eosc2022}.
+
+Interoperability across heterogeneous grid middleware platforms requires that resources describe themselves using a common, middleware-independent 
+vocabulary. This requirement — recognising that a grid site running UNICORE, an EGI site running the ARC middleware, and a Globus-connected HPC
+ cluster must all be able to describe their capabilities in a mutually intelligible format — motivated the development of the GLUE
+  (Grid Laboratory Uniform Environment) information schema through the Open Grid Forum (OGF). The authoritative specification is GLUE 2.0, 
+  documented in OGF Recommendation GFD.147, whose full authorship and formal citation is: Andreozzi, Burke, Ehm, Field, Galang, Konya, Litmaath,
+   Millar, and Navarro \parencite{andreozzi2009glue}. GLUE 2.0 is designed as a conceptual information model — expressed in natural language enriched with UML Class 
+   Diagrams — that is deliberately independent of any concrete data model or serialisation format, with separate rendering specifications for
+    LDAP Schema (GFD.148), XML Schema, and JSON Schema \parencite{memon2016glue} provided as companion documents. 
+    
+    The schema defines
+     standardised entities for computational resources (ComputingService, ComputingShare, ComputingEndpoint), storage systems 
+     (StorageService, StorageEndpoint, StorageShare), software environments (ApplicationEnvironment, ApplicationHandle), network connectivity,
+      and operational status attributes such as availability windows and capacity metrics. Burke, Field, and Horat \parencite{burke2011}, 
+      reporting the production 
+      migration to GLUE 2.0 across the LCG/EGEE/EGI grid infrastructure, document the complexity of adopting a new information model in a large, 
+      live production grid while maintaining backwards compatibility — a challenge that directly illustrates the governance dimension of architectural 
+      interoperability standards identified in Section 1.1. As of 2024, the GLUE schema continues to evolve through the OGF GLUE Working Group 
+      to accommodate cloud-native and container-based resources, reflecting the hybrid grid-cloud nature of contemporary research computing environments;
+       the EOSC Interoperability Framework explicitly references GLUE 2.0 as a foundational standard for resource description within the federation \parencite{eosc2022}.
+
+\section*{Resource Management and Scheduling}
+Section I established the architectural principles that enable Distributed Grid Computing: the five-layer hourglass model provides a minimal, 
+stable protocol core across heterogeneous resources; OGSA extended this core with stateful, standards-based service interfaces; and federated
+ architectures such as EGI and EOSC have formalised the multi-stakeholder governance frameworks necessary for large-scale resource sharing. 
+ Section II confronts the operational reality that these architectures create: given a federation of heterogeneous resources under diverse 
+ administrative authorities, how are computational tasks actually matched to appropriate resources, submitted, executed, and tracked? This
+  is the resource management and scheduling problem in grid computing, and it is qualitatively more complex than its equivalents in cluster 
+  or cloud environments. In a cluster, a single scheduler has full visibility and authority over all resources. In a cloud, the provider
+   controls the allocation layer. In a grid, the scheduler must operate across multiple autonomous domains simultaneously — each with its 
+   own batch system, local priorities, access policies, and failure modes — without being able to override any of them. 
+   
+   Hegde, Srinivas, Rajan, and colleagues \parencite{hegde2024}, in their open-access paper published in Scientific Reports, formalise this as an NP-complete multi-objective
+    optimisation problem involving makespan, cost, and energy consumption simultaneously across heterogeneous grid nodes — demonstrating
+     analytically why hand-crafted heuristics have historically dominated grid scheduling and why the emerging application of machine 
+     learning offers genuine advantages over rule-based approaches. Similarly, Yujian Wu and colleagues \parencite{wu2025task}, in their comprehensive survey of
+      task scheduling in geo-distributed computing published in IEEE Transactions on Parallel and Distributed Systems, identify the combination
+       of heterogeneous network conditions, region-specific resource policies, and geographically varying computational capabilities as the defining 
+       structural challenges that set grid and geo-distributed scheduling apart from single-site or cloud scheduling — precisely the combination 
+       of properties that the federated architectures of Section I are designed to accommodate at the infrastructure layer.
+
+    \subsection*{The Multi-Domain Scheduling Problem}
+  Resource management in grid computing differs qualitatively from resource management in cluster or cloud environments because it
+   must operate across multiple administrative domains, each with its own local resource manager, access policies, and scheduling 
+   objectives. A grid meta-scheduler must solve a hierarchical optimisation problem: at the global level, it must allocate jobs to
+    sites in a manner that achieves good overall performance while respecting each site’s local constraints; at the local level,
+     each site’s batch scheduler must integrate grid-submitted jobs into its existing local workload. These two levels of scheduling 
+     can conflict, particularly when sites enforce local priority policies that preempt or delay grid jobs. Four structural properties
+      make this problem qualitatively distinct from single-domain scheduling: autonomy (sites control their own resources and cannot be 
+      compelled to accept grid jobs); heterogeneity (sites differ in hardware, software, network connectivity, and local workload patterns); 
+      dynamism (resource availability changes continuously due to local workload fluctuations, maintenance, and failures); and policy conflict 
+      (globally optimal schedules routinely conflict with locally enforced priority and fairness policies). \parencite{turilli2018pilot}, 
+      in their comprehensive analysis of distributed scientific computing scheduling published in ACM Computing Surveys, document precisely how
+       these four properties combine to make grid-scale job management fundamentally different from single-site scheduling, showing that production
+        systems such as OSG and WLCG process millions of jobs per day across heterogeneous cyberinfrastructures only because pilot-job architectures 
+        absorb the dynamism and policy conflicts at the middleware layer rather than exposing them directly to user-level schedulers. 
+        Hegde et al. \parencite{hegde2024} further formalise the consequence: the combined multi-objective nature of the scheduling problem — optimising makespan, 
+        cost, and energy simultaneously across heterogeneous sites — is NP-complete in its general form, confirming analytically why no single 
+        scheduling heuristic can be universally optimal and why the field has progressively turned toward adaptive, AI-enhanced approaches 
+        discussed in Section 2.3. All four properties are direct consequences of the federated governance models described in 
+        Section 1.4 — the same autonomy that makes federation attractive to participating institutions is precisely what makes scheduling
+         across federations difficult.
+
+Grid resource management is further complicated by the dynamic nature of grid resource availability. Sites join and leave the grid, 
+maintenance windows take computational resources offline unexpectedly, and network conditions affecting data staging performance change continuously.
+ Effective grid resource management therefore requires not only good scheduling algorithms but also robust mechanisms for real-time resource monitoring,
+  failure detection, and adaptive job re-submission. Hegde et al. \parencite{hegde2024} demonstrate that the computational intractability of the multi-objective grid 
+  scheduling problem — which they prove is NP-complete in its general form — means that exact optimisation is computationally infeasible for real-world
+   grid scales, and that approximation algorithms and heuristics must be relied upon in practice. The consequence is that grid schedulers must balance 
+   solution quality against computational tractability, accepting near-optimal schedules that can be computed in real time over optimal schedules that
+    cannot. \parencite{wu2025task} further note that in geo-distributed settings, network-level dynamics — varying bandwidth, latency, and data transfer 
+    costs across wide-area links — introduce an additional scheduling dimension absent from single-site systems, because the cost of moving data to 
+    a computation site can exceed the cost of running the computation itself. This is the data locality problem that Section 2.4 addresses in detail, 
+    and it illustrates how the scheduling challenges of Section II are structurally rooted in the architectural choices of Section I: federating 
+    geographically distributed resources under independent administrative control inevitably creates the data-compute co-location problem that 
+    distinguishes grid scheduling from all simpler variants of the resource management problem.
+
+\subsection{Resource Discovery and Information Services}
+The prerequisite for any scheduling decision is knowledge of what resources are currently available. Grid information services provide this
+ knowledge by maintaining catalogues of resource availability, capability, and configuration. The Monitoring and Discovery Service (MDS) in 
+ the Globus Toolkit provides a hierarchical LDAP-based directory of resource information: resources register their status with local aggregators
+  that propagate summaries up a hierarchy to global information services, using the GLUE 2.0 information schema described in Section 1.5 to express 
+  their capabilities in a middleware-independent format. This hierarchical LDAP architecture was adequate for the grids of the early 2000s, but
+   its polling-based design introduces a fundamental limitation: information staleness proportional to the polling interval. A scheduler working 
+   with information that is minutes old in a grid where jobs complete in seconds, or where sites fail without warning, will routinely make suboptimal 
+   or invalid placement decisions. This limitation became critical as grid infrastructure scaled from dozens of sites to hundreds.
+      
+The transition to event-driven, time-series monitoring architectures has been the production response to this limitation. Rather than polling 
+resources at fixed intervals, event-driven systems propagate resource state changes in near-real time as they occur, using message brokers such 
+as Apache Kafka and ActiveMQ to fan out state change events to all interested consumers simultaneously. The WLCG’s MONIT infrastructure — the 
+unified monitoring architecture for the CERN data centres and the WLCG grid — exemplifies this approach at production scale. Aimar, Aguado Corman, 
+Andrade, Delgado Fernandez, Garrido Bear, Karavakis, Marek Kulikowski, and Magnoni \parencite{aimar2019monit}, in their open-access paper published in EPJ Web of
+ Conferences, document how MONIT replaced legacy in-house and commercial monitoring solutions with a fully open-source stack built on Collectd,
+  Kafka, Spark, Elasticsearch, InfluxDB, and Grafana — precisely the DevOps monitoring tools now standard in commercial cloud operations — to 
+  cover the complete monitoring data workflow from metric collection and validation through to dashboards, reports, and alarms. The significance 
+  of this architectural choice for grid scheduling is direct: by replacing polling with event streaming, MONIT reduces the window during which a 
+  scheduler might dispatch jobs to failed or overloaded resources from minutes (under polling) to seconds (under event streaming), translating 
+  directly into fewer failed job submissions and less wasted compute time across the 170-site WLCG federation. The EGI independently deployed its 
+  ARGO monitoring framework on similar principles, using Prometheus and message brokers to provide availability and reliability metrics across its 
+  federated infrastructure. Andreeva, Aimar, Kerekes, and Saiz \parencite{andreeva2010dashboard}, in the Journal of Grid Computing, provide the foundational production evidence 
+  for dashboard-based monitoring of LHC Virtual Organisation computing activities — the operational monitoring model that MONIT evolved from 
+  — confirming that centralised, unified monitoring is an operational necessity rather than an optional enhancement for grids of WLCG’s scale.
+
+  \subsection*{Scheduling Algorithms and AI-Enhanced Optimisation}
+  Grid scheduling algorithms must balance multiple competing objectives simultaneously: minimising job turnaround time, maximising resource utilisation, 
+  respecting priority agreements between Virtual Organisations (VOs) and resource providers, and satisfying data locality constraints. The problem is
+   structurally different from single-site scheduling because, as established in Section 2.1, the scheduler cannot force any participating site to 
+   accept jobs or alter its local policies. Classic grid scheduling approaches include list scheduling (ranking jobs by priority and assigning each 
+   to the best available resource), backfill scheduling (filling schedule gaps with smaller jobs whose execution will complete before higher-priority 
+   jobs require those resources), and advance reservation (allowing high-priority jobs to reserve resources at a specified future time). Turilli, 
+   Santcroos, and Jha \parencite{turilli2018pilot}, in their ACM Computing Surveys analysis of pilot-job systems — the dominant paradigm for production grid job management
+    — explain that these classic approaches must be implemented at the meta-scheduler level through the pilot-job abstraction precisely because the grid 
+    meta-scheduler cannot directly control local batch systems: pilot jobs act as placeholders that claim local resources, with the actual work units 
+    injected dynamically after the pilot has acquired a slot. This indirection is not an inefficiency — it is the architectural solution to the policy 
+    conflict and dynamism properties identified in Section 2.1.
+
+A significant and well-documented development since 2022 has been the application of machine learning techniques to scheduling optimisation. Adimora, 
+Gundla, and Sun \parencite{adimora2025hpc}, in their comprehensive survey of machine learning approaches for HPC scheduling published in Cluster Computing, systematically 
+review supervised learning, unsupervised learning, reinforcement learning, and neural network approaches across job allocation, workload prediction,
+ load balancing, energy efficiency, and fault tolerance — reporting reductions in job completion time of up to 30\% and improvements in resource 
+ utilisation of up to 25\% compared to traditional heuristics. For the specific problem of runtime prediction — which directly enables more accurate 
+ backfill scheduling and advance reservation — Zrigui, de Camargo, Legrand, and Trystram \parencite{zrigui2022online}, in a paper published in the Journal of Parallel and
+  Distributed Computing, demonstrate that a simple online classifier trained on recent workload history and used to distinguish short from long jobs 
+  outperforms both static policies and previous regression-based runtime prediction approaches, with the key advantage that the online approach requires 
+  only weeks of historical data rather than the months needed by regression models. For reinforcement learning applied directly to grid-scale scheduling,
+   Casagrande, Koslovski, Miers, Pillon, and Gonzalez \parencite{casagrande2022green}, in the International Journal of Grid and Utility Computing, demonstrate that a deep RL
+    agent can learn energy-aware shutdown scheduling policies that achieve up to 7\% energy savings and 27\% reduction in average job waiting time
+     compared to static rule-based policies — confirming that RL can acquire grid-specific scheduling knowledge that is difficult to encode as
+      hand-crafted rules. These AI-enhanced scheduling approaches are progressively being integrated into production grid meta-schedulers including 
+      HTCondor and SLURM, representing a significant evolution in grid resource management capability beyond the classical heuristics that have dominated 
+      production deployments for two decades.
+
+Economic models for grid scheduling have also gained renewed attention as production grids have increasingly interfaced with commercial cloud resources.
+ In a computational economy, jobs are submitted with associated budgets and resource providers set prices based on supply and demand; auction mechanisms, 
+ commodity market models, and contract-based models have been studied in both theoretical and experimental grid contexts. The practical realisation of
+  these economic scheduling ideas has come primarily through hybrid grid-cloud architectures, where commercial cloud providers offer on-demand resources
+   at published prices alongside the fixed-capacity grid, allowing meta-schedulers to make economically rational placement decisions based on job priority, 
+   deadline, and cost budget. Chard, Pruyne, McKee, Bryan, Raumann, Ananthakrishnan, Chard, and Foster \parencite{chard2023}, in their paper on Globus Automation Services
+    published in Future Generation Computer Systems, document how the Globus platform now implements multi-site workflow orchestration that can direct 
+    work to grid sites, institutional HPC resources, or commercial cloud providers within the same workflow execution — the operational instantiation of
+     the economic scheduling model in production research computing. This hybrid scheduling capability is analysed in depth in Section IV in the context 
+     of ACCESS and the NSF’s on-ramp programme for commercial cloud integration.
+
+    \subsection*{Data Locality and the Data Grid Scheduling Problem}
+One of the most significant performance challenges in data-intensive grid computing is the data locality problem: computation is fastest when the data it requires is co-located on the same system. In a grid environment, data may be stored at one site and compute resources at another, requiring data transfer over the wide-area network before computation can begin. For large datasets — and in contemporary particle physics, genomics, and climate science, datasets routinely run to hundreds of petabytes — this transfer time can dominate total job time, making the choice of which compute resource to use critically dependent on where the required data is already located. As Wu et al. (2025) note in their survey of task scheduling in geo-distributed computing, network-level dynamics in wide-area environments — varying bandwidth, latency, congestion, and data transfer costs across intercontinental links — introduce a scheduling dimension absent from single-site systems, because the cost of moving data to a computation site can exceed the cost of running the computation itself. This insight directly motivates the data locality-aware scheduling approaches that characterise production data grids.
+Scheduling systems for data-intensive grids must therefore consider data locality as a first-class scheduling objective alongside resource availability and queue length. The architectural solution is the combination of a distributed data management system that tracks the locations of all data replicas and implements replication policies, with a workload management system that uses replica location information as a primary input to its site selection algorithm. Barisits, Beermann, Berghaus, and colleagues (2019), in the peer-reviewed paper “Rucio: Scientific Data Management” published in Computing and Software for Big Science, document how Rucio implements this through its concept of Rucio Storage Elements (RSEs) — logical abstractions over heterogeneous storage systems — and replication rules that specify how many replicas of a dataset must exist, at which sites, and for how long. Crucially, Rucio maintains a functional distance metric between RSEs that encodes effective transfer throughput rather than geographic distance: two storage systems with high-bandwidth connectivity are treated as “closer” than two geographically adjacent systems with network constraints, directly expressing the scheduling-relevant cost of data movement in the system’s data model. Maeno, Alekseev, Barreiro Megino, De, Guan, Karavakis, Klimentov, Korchuganova, Lin, Nilsson, Wenaus, Yang, and Zhao (2024), in the authoritative PanDA system paper published in Computing and Software for Big Science, describe how the PanDA workload management system integrates Rucio replica information directly into its brokerage algorithm — selecting compute sites for each task based on a combination of site capacity, queue backlogs, and data availability — handling workloads at the exabyte scale across approximately 200 sites worldwide. The PanDA-Rucio integration represents the most mature production implementation of data locality-aware grid scheduling in existence, and its architecture has been extended beyond the ATLAS experiment to the CMS, ALICE, and LHCb experiments, as well as to the Vera C. Rubin Observatory’s Legacy Survey of Space and Time, confirming its generality as a data locality scheduling framework for large-scale distributed science.
+       \section*{Security Infrastructure and Middleware}
 % Your content here...
 
-\section{Security Infrastructure and Middleware}
-% Your content here...
-
-\section{Challenges, Case Studies, and Emerging Paradigms}
+\section*{Challenges, Case Studies, and Emerging Paradigms}
 % Your content here...
 
 \section*{Conclusion}

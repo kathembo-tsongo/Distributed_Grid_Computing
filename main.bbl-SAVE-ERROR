@@ -119,6 +119,98 @@
       \field{pages}{115\bibrangedash 128}
       \range{pages}{14}
     \endentry
+    \entry{foster2001}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{bibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authorbibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{3}
+      \field{title}{The anatomy of the grid: Enabling scalable virtual organizations}
+      \field{volume}{15}
+      \field{year}{2001}
+      \field{pages}{200\bibrangedash 222}
+      \range{pages}{23}
+    \endentry
+    \entry{foster2002}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=805cc88a600f9eca9768b04ced4fef0f}{%
+           family={Nick},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{bibnamehash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{authorbibnamehash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Computer}
+      \field{number}{6}
+      \field{title}{The physiology of the grid: An open grid services architecture for distributed systems integration}
+      \field{volume}{35}
+      \field{year}{2002}
+      \field{pages}{37\bibrangedash 46}
+      \range{pages}{10}
+    \endentry
     \entry{grigoryeva2024}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4df4d9c3218b13c1baa78afedd836aa0}{%
@@ -319,6 +411,98 @@
       \field{pages}{115\bibrangedash 128}
       \range{pages}{14}
     \endentry
+    \entry{foster2002}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=805cc88a600f9eca9768b04ced4fef0f}{%
+           family={Nick},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{bibnamehash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{authorbibnamehash}{417a687e86732cab16ab62a1b5a548d6}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{417a687e86732cab16ab62a1b5a548d6}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Computer}
+      \field{number}{6}
+      \field{title}{The physiology of the grid: An open grid services architecture for distributed systems integration}
+      \field{volume}{35}
+      \field{year}{2002}
+      \field{pages}{37\bibrangedash 46}
+      \range{pages}{10}
+    \endentry
+    \entry{foster2001}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b3de47ef35033479285225648125a148}{%
+           family={Foster},
+           familyi={F\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58a7a659f18e928e3c012c3518eeeb2f}{%
+           family={Kesselman},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d341576b59ba8faab7a9718954e0ad3a}{%
+           family={Tuecke},
+           familyi={T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{fullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{bibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authorbibnamehash}{c0c36e83e5c31a9abbaae14698822d52}
+      \strng{authornamehash}{c98aca4614abdef8e7ed727b0638798a}
+      \strng{authorfullhash}{c0c36e83e5c31a9abbaae14698822d52}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of High Performance Computing Applications}
+      \field{number}{3}
+      \field{title}{The anatomy of the grid: Enabling scalable virtual organizations}
+      \field{volume}{15}
+      \field{year}{2001}
+      \field{pages}{200\bibrangedash 222}
+      \range{pages}{23}
+    \endentry
     \entry{grigoryeva2024}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4df4d9c3218b13c1baa78afedd836aa0}{%
@@ -418,7 +602,6 @@
       \field{year}{2009}
     \endentry
   \enddatalist
-  \missing{fosrer2002}
 \endrefsection
 \endinput
 

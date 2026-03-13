@@ -3068,6 +3068,47 @@
     <bcf:citekey order="5" intorder="1">grigoryeva2024</bcf:citekey>
     <bcf:citekey order="6" intorder="1">snelling2009</bcf:citekey>
     <bcf:citekey order="7" intorder="1">eosc2022</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">grigoryeva2024</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">slurm2003</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">condor2005</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">foster1998</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">czajkowski2001</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">czajkowski2001</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">grigoryeva2024</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">foster2001</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">grigoryeva2024</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">foster2002</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">foster2002</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">snelling2009</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">foster2005modeling</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">grigoryeva2024</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">eosc2022</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">calatrava2023</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">eosc2022</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">andreozzi2009glue</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">memon2016glue</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">burke2011</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">eosc2022</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">hegde2024</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">wu2025task</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">turilli2018pilot</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">hegde2024</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">hegde2024</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">wu2025task</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">aimar2019monit</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">andreeva2010dashboard</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">turilli2018pilot</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">adimora2025hpc</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">zrigui2022online</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">casagrande2022green</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">chard2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
