@@ -429,10 +429,143 @@ Economic models for grid scheduling have also gained renewed attention as produc
      of ACCESS and the NSF’s on-ramp programme for commercial cloud integration.
 
     \subsection*{Data Locality and the Data Grid Scheduling Problem}
-One of the most significant performance challenges in data-intensive grid computing is the data locality problem: computation is fastest when the data it requires is co-located on the same system. In a grid environment, data may be stored at one site and compute resources at another, requiring data transfer over the wide-area network before computation can begin. For large datasets — and in contemporary particle physics, genomics, and climate science, datasets routinely run to hundreds of petabytes — this transfer time can dominate total job time, making the choice of which compute resource to use critically dependent on where the required data is already located. As Wu et al. (2025) note in their survey of task scheduling in geo-distributed computing, network-level dynamics in wide-area environments — varying bandwidth, latency, congestion, and data transfer costs across intercontinental links — introduce a scheduling dimension absent from single-site systems, because the cost of moving data to a computation site can exceed the cost of running the computation itself. This insight directly motivates the data locality-aware scheduling approaches that characterise production data grids.
-Scheduling systems for data-intensive grids must therefore consider data locality as a first-class scheduling objective alongside resource availability and queue length. The architectural solution is the combination of a distributed data management system that tracks the locations of all data replicas and implements replication policies, with a workload management system that uses replica location information as a primary input to its site selection algorithm. Barisits, Beermann, Berghaus, and colleagues (2019), in the peer-reviewed paper “Rucio: Scientific Data Management” published in Computing and Software for Big Science, document how Rucio implements this through its concept of Rucio Storage Elements (RSEs) — logical abstractions over heterogeneous storage systems — and replication rules that specify how many replicas of a dataset must exist, at which sites, and for how long. Crucially, Rucio maintains a functional distance metric between RSEs that encodes effective transfer throughput rather than geographic distance: two storage systems with high-bandwidth connectivity are treated as “closer” than two geographically adjacent systems with network constraints, directly expressing the scheduling-relevant cost of data movement in the system’s data model. Maeno, Alekseev, Barreiro Megino, De, Guan, Karavakis, Klimentov, Korchuganova, Lin, Nilsson, Wenaus, Yang, and Zhao (2024), in the authoritative PanDA system paper published in Computing and Software for Big Science, describe how the PanDA workload management system integrates Rucio replica information directly into its brokerage algorithm — selecting compute sites for each task based on a combination of site capacity, queue backlogs, and data availability — handling workloads at the exabyte scale across approximately 200 sites worldwide. The PanDA-Rucio integration represents the most mature production implementation of data locality-aware grid scheduling in existence, and its architecture has been extended beyond the ATLAS experiment to the CMS, ALICE, and LHCb experiments, as well as to the Vera C. Rubin Observatory’s Legacy Survey of Space and Time, confirming its generality as a data locality scheduling framework for large-scale distributed science.
-       \section*{Security Infrastructure and Middleware}
-% Your content here...
+One of the most significant performance challenges in data-intensive grid computing is the data locality problem: computation is fastest when the data it
+ requires is co-located on the same system. In a grid environment, data may be stored at one site and compute resources at another, requiring data transfer 
+ over the wide-area network before computation can begin. For large datasets — and in contemporary particle physics, genomics, and climate science, datasets 
+ routinely run to hundreds of petabytes — this transfer time can dominate total job time, making the choice of which compute resource to use critically 
+ dependent on where the required data is already located. As Wu et al. \parencite{wu2025task} note in their survey of task scheduling in geo-distributed computing,
+  network-level dynamics in wide-area environments — varying bandwidth, latency, congestion, and data transfer costs across intercontinental 
+  links — introduce a scheduling dimension absent from single-site systems, because the cost of moving data to a computation site can exceed the cost of
+   running the computation itself. This insight directly motivates the data locality-aware scheduling approaches that characterise production data grids.
+
+Scheduling systems for data-intensive grids must therefore consider data locality as a first-class scheduling objective alongside resource availability
+ and queue length. The architectural solution is the combination of a distributed data management system that tracks the locations of all data replicas 
+ and implements replication policies, with a workload management system that uses replica location information as a primary input to its site selection 
+ algorithm. Barisits, Beermann, Berghaus, and colleagues \parencite{barisits2019rucio}, in the peer-reviewed paper “Rucio: Scientific Data Management” published in Computing 
+ and Software for Big Science, document how Rucio implements this through its concept of Rucio Storage Elements (RSEs) — logical abstractions over
+  heterogeneous storage systems — and replication rules that specify how many replicas of a dataset must exist, at which sites, and for how long. 
+  Crucially, Rucio maintains a functional distance metric between RSEs that encodes effective transfer throughput rather than geographic distance: 
+  two storage systems with high-bandwidth connectivity are treated as “closer” than two geographically adjacent systems with network constraints, 
+  directly expressing the scheduling-relevant cost of data movement in the system’s data model. Maeno, Alekseev, Barreiro Megino, De, Guan, Karavakis, 
+  Klimentov, Korchuganova, Lin, Nilsson, Wenaus, Yang, and Zhao \parencite{maeno2024panda}, in the authoritative PanDA system paper published in Computing and Software for 
+  Big Science, describe how the PanDA workload management system integrates Rucio replica information directly into its brokerage algorithm — selecting
+   compute sites for each task based on a combination of site capacity, queue backlogs, and data availability — handling workloads at the exabyte 
+   scale across approximately 200 sites worldwide. The PanDA-Rucio integration represents the most mature production implementation of data locality-aware
+    grid scheduling in existence, and its architecture has been extended beyond the ATLAS experiment to the CMS, ALICE, and LHCb experiments, as well as to 
+    the Vera C. Rubin Observatory’s Legacy Survey of Space and Time, confirming its generality as a data locality scheduling framework for large-scale 
+    distributed science.
+
+\subsection*{Workflow Management and Scientific Reproducibility}
+Scientific grid applications increasingly take the form of complex, multi-step workflows in which the output of one computational task serves as the 
+input to the next. Managing such workflows in a grid environment requires systems capable of expressing task dependencies, coordinating data staging 
+between tasks, handling partial failures, and tracking data provenance for scientific reproducibility. Deelman, Vahi, Rynge, Mayani, Ferreira da Silva, 
+Papadimitriou, and Livny \parencite{deelman2019pegasus}, in the definitive evolution paper for the Pegasus Workflow Management System published in Computing in Science & 
+Engineering, document how Pegasus has since 2001 developed into a robust system that automates the execution of complex applications on heterogeneous, 
+distributed high-throughput and high-performance computing environments. 
+
+A core principle of the Pegasus design — the separation of workflow description 
+from workflow execution — is what enables scientific workflows to be mapped adaptively onto diverse target environments including campus clusters, 
+national cyberinfrastructures, and commercial clouds. Pegasus handles data staging automatically: it inserts data transfer and registration jobs into 
+the workflow graph as needed, selecting storage and compute resources based on data locality and site availability, and integrating with distributed 
+data management systems such as Rucio to resolve replica locations before scheduling each task. Ferreira da Silva, Badia, Bala, Bard, and colleagues \parencite{ferreiradasilva2023roadmap},
+ in the community roadmap report emerging from the 2022 Workflows Community Summit, identify the continued evolution of workflow systems toward heterogeneous
+  computing — spanning edge nodes, HPC centres, cloud, and quantum backends — as the defining challenge for the next generation of scientific workflow 
+  management.
+
+The importance of workflow provenance — the ability to trace exactly what computation was performed, with what software and parameters, on what 
+input data — has grown significantly as reproducibility has become a central concern of scientific publishing. The W3C PROV standard and its 
+extension to the scientific computing context through the ProvONE model provide formal frameworks for representing computational provenance. Goble, 
+Cohen-Boulakia, Soiland-Reyes, Garijo, Gil, Crusoe, Peters, and Schober \parencite{goble2020fair}, writing in the journal Data Intelligence, establish the case that
+ workflow systems are not merely tools for executing computation but are themselves digital objects that must satisfy FAIR principles — they must 
+ be findable via registries with persistent identifiers, accessible through standardised protocols, interoperable across workflow engines, and 
+ reusable through rich metadata describing their inputs, parameters, and computational environment. Wilkinson, Dumontier, Aalbersberg, and 
+ colleagues \parencite{wilkinson2016fair}, in the foundational FAIR principles paper published in Scientific Data, first articulated the framework of Findable, 
+ Accessible, Interoperable, and Reusable requirements that now underpins data management mandates from the European Commission, the US
+  National Science Foundation, the US National Institutes of Health, and major national funding agencies worldwide. Extending this to software 
+  and workflows specifically, Wilkinson, Aloqalaa, Belhajjame, Crusoe, and colleagues \parencite{wilkinson2025applying}, in a follow-on paper published in Scientific Data, 
+  confirm that the FAIR principles apply directly to computational workflows — requiring that workflows be deposited in searchable registries, 
+  assigned globally unique identifiers, described with sufficiently rich metadata to enable reuse, and executed in reproducible software environments. 
+  Together, these requirements establish that integration of provenance capture, workflow registration, and FAIR-compliant metadata publication into 
+  workflow management systems is now considered a minimum standard for scientific grid infrastructure.
+
+\section*{Security Infrastructure and Middleware}
+The architectural foundations established in Section I and the resource management mechanisms examined in Section II are both entirely dependent on a 
+third dimension that makes production-scale grid computing possible: security. A grid environment that federates hundreds of administrative domains,
+ processing millions of jobs across petabytes of data belonging to thousands of researchers worldwide, operates in an adversarial environment in which
+  authentication failures, authorisation bypasses, or compromised credentials can cascade across institutional boundaries in ways impossible in 
+  single-domain systems. Section III analyses the evolution of grid security infrastructure — from the original Grid Security Infrastructure (GSI)
+   designed by Foster, Kesselman, Tsudik, and Tuecke \parencite{foster1998} and discussed in Section 1.2 through to the token-based federated identity systems 
+   replacing X.509 proxy certificates in contemporary production grids — and examines the major middleware platforms that translate the architectural
+    principles of Sections I and II into deployable software. The GSI design choices made in 1998 directly shaped the architectures of every production 
+    grid that followed: WLCG, EGI, OSG, and EOSC all carry the imprint of the GSI’s PKI-centred trust model. 
+    
+    The contemporary transition toward 
+    OAuth 2.0, OpenID Connect, and capability tokens represents not a rejection of the GSI’s principles but an evolution of its implementation, 
+    driven by the usability barriers and scalability limits of X.509 certificate management at exascale. Withers, Bockelman, Weitzel, Brown, Gaynor, 
+    Basney, Tannenbaum, and Miller \parencite{withers2018scitokens}, in the SciTokens paper presented at PEARC ’18, document precisely this transition: whereas X.509 proxy 
+    certificates authenticate identity and then leave authorisation to site-level policies, capability-based OAuth tokens embed the specific 
+    authorisations required by each workflow directly into the token itself, eliminating the credential management overhead that historically 
+    plagued large-scale grid workflows. Understanding this evolution is essential for understanding why contemporary grid middleware — Globus,
+     DIRAC, HTCondor, and UNICORE — looks the way it does, and why Section III’s analysis of security infrastructure and middleware must be read 
+     as a single unified account rather than two separate topics.
+
+\subsection*{The Multi-Domain Security Problem}
+Security in Distributed Grid Computing is fundamentally more challenging than in single-domain distributed systems because it must span multiple
+ administrative security domains, each with its own user directory, access control framework, and trust model. The challenge is not merely technical 
+ but structural: no single authority controls all the participating institutions, yet the security of any one site depends on the integrity of the 
+ credential infrastructure shared across all of them. A particle physicist at the University of Nairobi submitting a job to the WLCG must be
+  authenticated by a certificate authority trusted by CERN, authorised by the Virtual Organisation’s policy, and then authenticated and authorised 
+  again by the local site’s security framework — all without manual intervention at each step and without revealing the user’s private credentials
+   to any intermediate service. 
+   
+   Foster, Kesselman, Tsudik, and Tuecke \parencite{foster1998}, in the paper “A Security Architecture for Computational Grids” presented
+    at ACM CCS and discussed in the Connectivity layer analysis of Section 1.2, designed the Grid Security Infrastructure (GSI) to satisfy exactly this 
+    requirement. They identified six non-negotiable security properties for a multi-domain grid environment: single sign-on (users authenticate once,
+     not at each site); mutual authentication (both user and service verify each other’s identity, preventing impersonation of either party); message 
+     integrity and confidentiality (data in transit is protected against eavesdropping and tampering); delegation (a service can act on a user’s behalf
+      without requiring the user’s interactive presence); fine-grained authorisation (access decisions are based on rich policy rather than binary 
+      allow/deny); and accurate accounting (resource usage is attributable to specific identities for auditability and billing). 
+      
+      These six requirements,
+       formulated for the grids of the late 1990s, remain equally applicable to the exascale federated infrastructures of 2024 — what has changed is the 
+       technology used to implement them. The X.509 PKI approach that the GSI adopted to satisfy these requirements was technically sound but carried a 
+       structural usability cost: obtaining and managing grid certificates requires interaction with a Grid Certificate Authority’s registration process, 
+       certificate lifetimes must be actively managed, and proxy certificates must be renewed for long-running jobs. At the scale of tens of thousands of
+        users across hundreds of institutions, this certificate management overhead constitutes a significant barrier to participation. Dack, Agostini, 
+        Basney, Cornwall, De Stefano, Dykstra, Giacomini, Litmaath, Miccoli, Sallé, Short, and Vianello \parencite{dack2024wlcg}, representing the WLCG Authorization Working
+         Group in their CHEP 2023 paper published in EPJ Web of Conferences, document precisely this motivation: the WLCG Authorization Working Group was 
+         formed in July 2017 explicitly to address the limitations of the X.509-GSI model and to define a token-based replacement using modern OAuth 2.0 
+         and OpenID Connect standards, with the objective of satisfying the same six security requirements as the original GSI while eliminating the
+          certificate management overhead that had accumulated over two decades of production operation. The transition they describe — from 
+          identity-centric X.509 proxy delegation to capability-centric OAuth bearer tokens — is the most significant evolution in grid security 
+          infrastructure since the original GSI design, and its architecture is analysed in detail in the next sections 3.2 and 3.5.
+
+\subsection{X.509 Certificates and the International Grid Trust Federation}
+The GSI design builds upon the X.509 Public Key Infrastructure (PKI) standard, formally specified in the Internet Engineering Task Force RFC
+ series — most authoritatively in RFC 5280 \parencite{rfc5280}, which defines the Internet X.509
+  certificate and Certificate Revocation List profile. Under this framework, every grid user and every grid service endpoint is issued 
+  an X.509 digital certificate by a trusted Grid Certificate Authority (Grid CA). The certificate cryptographically binds the holder’s 
+  public key to their identity — expressed as a Distinguished Name (DN) — through a digital signature by the issuing CA, so that any relying 
+  party possessing the CA’s public key can independently verify the binding without contacting the CA at authentication time. When a grid user
+   authenticates to a resource, they prove possession of the private key corresponding to their certificate through a TLS or GSI-specific 
+   challenge-response exchange; the resource then validates the certificate chain and checks the Certificate Revocation List (CRL) or Online 
+   Certificate Status Protocol (OCSP) service to confirm the certificate has not been revoked. 
+
+Cornwall, Jensen, Kelsey, Frohner, Kouril, Bonnassieux, Nicoud, Lörentey, Hahkala, Silander, Cecchini, Ciaschini, dell’Agnello, Spataro, O’Callaghan, 
+Mulmo, Volpato, Groep, Steenbakkers, and McNab \parencite{cornwall2004authentication}, in their peer-reviewed paper on authentication and authorisation mechanisms for multi-domain 
+grid environments published in the Journal of Grid Computing, document precisely how this chain-of-trust model was deployed across the European DataGrid
+ and related infrastructures. They show that the critical challenge in multi-domain grid authentication is not merely the cryptographic mechanism — which 
+ standard X.509 provides — but the establishment and maintenance of a consistent, globally agreed list of trusted CAs across institutions that have 
+ no pre-existing bilateral trust relationships, making the trust federation infrastructure as important as the cryptographic infrastructure itself.
+  Alfieri, Cecchini, Ciaschini, dell’Agnello, Frohner, Lörentey, and Spataro \parencite{alfieri2005voms}, in the definitive peer-reviewed account of the VOMS authorisation
+   service published in Future Generation Computer Systems, trace the evolution from the earliest grid authorisation model — the gridmap file, a static 
+   per-site mapping of certificate Distinguished Names to local Unix accounts — to VOMS, which encodes VO membership and role attributes directly into 
+   proxy certificate extensions. This architectural progression is essential context for section 3.2: the X.509 chain-of-trust establishes that a 
+   certificate is authentic; VOMS then uses that authenticated identity to determine what the certified user is permitted to do within a specific VO, 
+   separating authentication (who are you?) from authorisation (what may you do?) — a distinction that Section 3.5 will develop in full.
+
+\subsection*{Proxy Certificates and Delegation}
+
 
 \section*{Challenges, Case Studies, and Emerging Paradigms}
 % Your content here...

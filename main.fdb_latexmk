@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1773396676.48136 -1
-  "main.bcf" 1773396676.41853 136249 7159244645be499dc4896786d449315d "pdflatex"
-  "references.bib" 1773396241.80642 10251 54f8363dc4b42557cdafbd05c68403b1 ""
+["biber main"] 1773410102.78508 "main.bcf" "main.bbl" "main" 1773410130.12382 0
+  "main.bcf" 1773410130.01178 137325 cf1991e554a1062c3efcbe82938de58b "pdflatex"
+  "references.bib" 1773409942.34034 16071 7869044bd97fbc6b3bf7eaa2bb5e0efb ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1773396674.79191 "/home/dieudonne/SPECIALIZATION/LaTexDocs/main.tex" "main.pdf" "main" 1773396676.48181 2
+["pdflatex"] 1773410127.67473 "/home/dieudonne/SPECIALIZATION/LaTexDocs/main.tex" "main.pdf" "main" 1773410130.12436 2
   "/etc/texmf/web2c/texmf.cnf" 1770489521.4762 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/dieudonne/SPECIALIZATION/LaTexDocs/main.tex" 1773396674.41398 49122 75558e0bddee604c35b7851daa07c81a ""
+  "/home/dieudonne/SPECIALIZATION/LaTexDocs/main.tex" 1773410126.55171 62919 1d7c2f194efe199a7eddf7ab8546572f ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -117,10 +117,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1770489545.30875 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770489573 8213748 9b2ca307748213d8bf2581e3767b4fc7 ""
   "images/strathmore_logo.png" 1770492596.12661 8364 00ca8e15eb27af2c1f5f815760099607 ""
-  "main.aux" 1773396676.41453 10067 1f7d41ed653d912adef4c845bd3cc164 "pdflatex"
-  "main.bbl" 1773396332.37195 111316 0d1848c69747578d0839b1ee97e69086 "biber main"
-  "main.out" 1773396676.41753 489 c2a5a66a955678086051bf2c9ab89573 "pdflatex"
-  "main.tex" 1773396674.41398 49122 75558e0bddee604c35b7851daa07c81a ""
+  "main.aux" 1773410130.00578 13622 f6fa939d836a55792366a1ffcbdce11d "pdflatex"
+  "main.bbl" 1773410104.39293 193164 41cc4dee1c28dab6676de08180e9e2be "biber main"
+  "main.out" 1773410130.00978 879 531d3471e4a19ac7ee9747de6ea7d7e5 "pdflatex"
+  "main.run.xml" 1773410130.0136 2427 d1bfcd6d722f5bf4e724fdcb22d9bbf2 "pdflatex"
+  "main.tex" 1773410126.55171 62919 1d7c2f194efe199a7eddf7ab8546572f ""
   (generated)
   "main.aux"
   "main.bcf"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  13 MAR 2026 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  13 MAR 2026 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,8 +561,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 30.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-No file main.aux.
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -583,6 +582,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -669,12 +669,13 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Info: Reference section=0 on input line 30.
 Package biblatex Info: Reference segment=0 on input line 30.
 Package hyperref Info: Link coloring OFF on input line 30.
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<./images/strathmore_logo.png, id=4, 324.21124pt x 156.585pt>
+<./images/strathmore_logo.png, id=19, 324.21124pt x 156.585pt>
 File: ./images/strathmore_logo.png Graphic file (type png)
 <use ./images/strathmore_logo.png>
 Package pdftex.def Info: ./images/strathmore_logo.png  used on input line 36.
@@ -702,59 +703,60 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 445.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 445.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 445.
- [17
+[7] [8] [9] [10] [11] [12] [13] [14] [15]
+/home/dieudonne/SPECIALIZATION/LaTexDocs/main.tex:462: Misplaced alignment tab character &.
+l.462 ...ystem published in Computing in Science &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-] [18]
-Overfull \hbox (7.01537pt too wide) in paragraph at lines 445--445
+[16] [17] [18] [19] [20]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 578.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 578.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 578.
+ [21
+
+]
+Overfull \hbox (15.49081pt too wide) in paragraph at lines 578--578
+\T1/ptm/m/n/12 S., Lörentey, K., Hahkala, J., Si-lan-der, M., Cec-chini, R., Cias-chini, V., dell'Agnello,
+ []
+
+[22] [23]
+Overfull \hbox (7.01537pt too wide) in paragraph at lines 578--578
 \T1/ptm/m/it/12 Job schedul-ing strate-gies for par-al-lel pro-cess-ing \T1/ptm/m/n/12 (pp. 44^^U60, Vol. 2862). Springer. 
  []
 
-[19] (./main.aux)
+[24] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  C2A5A66A955678086051BF2C9AB89573;489.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 531D3471E4A19AC7EE9747DE6EA7D7E5;879.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19839 strings out of 474222
- 351528 string characters out of 5748734
- 1937975 words of memory out of 5000000
- 41843 multiletter control sequences out of 15000+600000
+ 20019 strings out of 474222
+ 355626 string characters out of 5748734
+ 1938975 words of memory out of 5000000
+ 41999 multiletter control sequences out of 15000+600000
  590964 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,5n,81p,2339b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,5n,81p,1234b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 112920 bytes).
+Output written on main.pdf (25 pages, 133931 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 305 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

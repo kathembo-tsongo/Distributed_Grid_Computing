@@ -3109,6 +3109,21 @@
     <bcf:citekey order="46" intorder="1">zrigui2022online</bcf:citekey>
     <bcf:citekey order="47" intorder="1">casagrande2022green</bcf:citekey>
     <bcf:citekey order="48" intorder="1">chard2023</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">wu2025task</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">barisits2019rucio</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">maeno2024panda</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">deelman2019pegasus</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">ferreiradasilva2023roadmap</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">goble2020fair</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">wilkinson2016fair</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">wilkinson2025applying</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">foster1998</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">withers2018scitokens</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">foster1998</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">dack2024wlcg</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">rfc5280</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">cornwall2004authentication</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">alfieri2005voms</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
