@@ -76,7 +76,39 @@
 \pagenumbering{arabic} % Switch to 1, 2, 3 for the paper content
 
 \section*{Introduction}
-\addcontentsline{toc}{section}{Introduction} % Adds unnumbered intro to TOC
+\subsection*{Background}
+The origins of Distributed Grid Computing lie in the metacomputing experiments of the early 1990s. The I-WAY experiment of 1995 linked supercomputers 
+at seventeen North American sites and proved wide-area distributed computation feasible \parencite{foster1998}. The Globus Project translated that
+ insight into a reusable middleware toolkit that became the de facto standard through the 2000s \parencite{foster1997}. Europe responded with the 
+ EGEE projects and the European Grid Infrastructure (EGI); the United States built TeraGrid, XSEDE, and now ACCESS \parencite{boerner2023access}. Today the 
+ Worldwide LHC Computing Grid (WLCG) links more than 170 computing centres in 42 countries under a single shared workload \parencite{atlas2025software}.
+  Grid computing is defined as the coordinated use of geographically dispersed, heterogeneous computational resources — owned by independent 
+  institutions — to solve problems beyond the capacity of any single system. Three foundational concepts structure every grid deployment: the 
+  Virtual Organisation (VO), which governs resource-sharing agreements; the meta-scheduler, which allocates work across VO boundaries; and the 
+  Grid Security Infrastructure (GSI), which enforces cross-institutional authentication and authorisation \parencite{foster1998}.
+
+\subsection*{Problem Statement}
+Federating genuinely autonomous institutions creates challenges that neither cluster computing nor commercial cloud computing is designed to solve. 
+Scheduling must span multiple administrative domains each enforcing independent priorities — a problem Hegde et al. \parencite{hegde2024} prove is NP-complete 
+in its general multi-objective form. Security must extend across domain boundaries without any single authority controlling all participants; 
+the original X.509 proxy-delegation model has proven robust but operationally burdensome at scale, motivating an ongoing transition to 
+OAuth 2.0 token-based authentication across WLCG and EGI \parencite{dack2024wlcg}. Data volumes are growing faster than network bandwidth: 
+the WLCG already manages hundreds of petabytes, and the Square Kilometre Array will generate ~300 petabytes per telescope per year \parencite{scaife2020}. 
+Environmental sustainability adds a further constraint: WLCG’s 170 data centres consume substantial electrical power, and operating the HL-LHC
+ programme within carbon-neutral limits will require simultaneous improvements across software, hardware, and energy procurement \parencite{britton2024energy}.
+  These are not isolated problems but structural consequences of the federated architecture that makes grid computing institutionally viable.
+
+\subsection*{Scope}
+This paper provides a comprehensive, analytically structured examination of Distributed Grid Computing across four sections. Section I analyses grid 
+architectures: from the five-layer hourglass model \parencite{foster2001} and the Open Grid Services Architecture through to contemporary EOSC-scale 
+federated and microservices designs. Section II examines resource management and scheduling: multi-domain meta-scheduling, AI-enhanced job placement, 
+data locality-aware scheduling using the Rucio/PanDA production stack, and scientific workflow management under FAIR reproducibility requirements. 
+Section III covers the evolution of grid security and middleware: from X.509/GSI and VOMS authorisation to token-based federated identity, alongside
+ analysis of the Globus, DIRAC, HTCondor, and UNICORE platforms. Section IV synthesises current challenges, presents case studies from high-energy physics,
+  gravitational wave astronomy, genomics, climate science, and grid access in Kenya, and analyses grid–cloud–edge convergence. The paper argues that 
+  the federated governance model at grid computing’s core — enabling independent institutions to share resources without surrendering autonomy — is 
+  the defining architectural insight that commercial cloud computing is structurally unable to replicate, and which makes grid infrastructure irreplaceable
+   for large-scale scientific discovery.
 
 \section*{Grid Computing Architectures}
 \subsection*{The Architgitectural Design Challenge}
@@ -540,7 +572,7 @@ Security in Distributed Grid Computing is fundamentally more challenging than in
           identity-centric X.509 proxy delegation to capability-centric OAuth bearer tokens — is the most significant evolution in grid security 
           infrastructure since the original GSI design, and its architecture is analysed in detail in the next sections 3.2 and 3.5.
 
-\subsection{X.509 Certificates and the International Grid Trust Federation}
+\subsection*{X.509 Certificates and the International Grid Trust Federation}
 The GSI design builds upon the X.509 Public Key Infrastructure (PKI) standard, formally specified in the Internet Engineering Task Force RFC
  series — most authoritatively in RFC 5280 \parencite{rfc5280}, which defines the Internet X.509
   certificate and Certificate Revocation List profile. Under this framework, every grid user and every grid service endpoint is issued 
@@ -565,12 +597,453 @@ grid environments published in the Journal of Grid Computing, document precisely
    separating authentication (who are you?) from authorisation (what may you do?) — a distinction that Section 3.5 will develop in full.
 
 \subsection*{Proxy Certificates and Delegation}
+A central mechanism of GSI is proxy certificate delegation — the ability of a grid user to create a short-lived, derivative certificate 
+(a proxy certificate) that authorises grid services to act on the user’s behalf without requiring interactive presence for each operation. 
+The technical specification for proxy certificates is RFC 3820, authored by Tuecke, Welch, Engert, Pearlman, and Thompson \parencite{rfc3820} as an IETF
+ Internet Standards Track document. RFC 3820 defines a proxy certificate as one derived from, and signed by, a normal X.509 end-entity 
+ certificate or by another proxy certificate, for the purpose of providing restricted proxying and delegation within a PKI-based authentication
+  system. Crucially, the RFC introduces the concept of restricted proxies — proxy certificates carrying policy extensions that limit the rights
+   they convey to a strict subset of those held by the originating end-entity certificate — so that a workflow management system delegated a 
+   restricted proxy cannot exercise the user’s full authorisations, limiting the blast radius of a credential compromise to only the specific
+    operations the workflow requires. When a user submits a workflow to a grid, they generate a proxy certificate — typically with a lifetime 
+    of 12 to 48 hours — and delegate it to the workflow management system. 
+    
+    The workflow system presents this proxy in GSI-secured TLS handshakes
+     to authenticate job submissions, data staging operations, and service interactions across all participating grid sites, without the user
+      being present at each step. Basney, Humphrey, and Welch \parencite{basney2005myproxy}, in the peer-reviewed paper “The MyProxy Online Credential Repository” 
+      published in Software: Practice and Experience, document how MyProxy addresses the operational challenge that proxy delegation creates 
+      for long-running grid jobs: since a proxy certificate has a fixed validity period of 12–48 hours, a workflow spanning multiple days would 
+      fail when its initial proxy expires unless a renewal mechanism exists. MyProxy solves this by providing a secure server-side repository in
+       which the user deposits a longer-lived credential at job submission time, protected by a separate passphrase; the workflow agent retrieves 
+       freshly-delegated short-lived proxy credentials from MyProxy as needed throughout the job’s lifetime. Critically, the private key stored in 
+       the MyProxy repository is never transmitted over the network — the client receives a newly-delegated proxy, not the private key itself 
+       — preserving the security properties of the GSI credential model while enabling the multi-day, multi-site grid workflows that particle physics,
+        genomics, and climate science routinely require. The dependency of this entire proxy delegation infrastructure on the X.509 certificate 
+        lifecycle is precisely what motivates the token-based transition that we are going to discuss in Section 3.4: as Dack et al. \parencite{dack2024wlcg} document, the WLCG’s move 
+        toward OAuth 2.0 bearer tokens directly addresses the operational complexity and scalability limits of long-running proxy credential 
+        management that even the sophisticated MyProxy architecture could only partially mitigate.
 
+\subsection*{Federated Identity: The Transition Beyond X.509}
+A significant security evolution in contemporary grid infrastructure is the transition from X.509 grid certificates toward federated identity 
+and token-based authentication. X.509 certificates have historically been a significant usability barrier: obtaining a grid certificate requires 
+interaction with a Grid CA’s registration process, managing certificate lifetimes adds operational complexity, and the manual registration authority
+ model scales poorly to the tens of thousands of researchers who routinely need grid access. The AARC (Authentication and Authorisation for Research 
+ and Collaboration) Blueprint Architecture, developed through successive European Commission-funded projects beginning in 2015, defines a framework 
+ for integrating institutional identity providers (using SAML or OpenID Connect protocols) with research authorisation infrastructure. 
+ 
+ Biancini, 
+ Florio, Haase, Hardt, Jensen, Kanellopoulos, Liampotis, Licehammer, Memon, van Dijk, Paetow, Prochazka, Sallé, Solagna, Stevanovic, and Vaghetti \parencite{biancini2016aarc},
+  in the first formal publication of the Blueprint Architecture (arXiv:1611.07832), establish the central design principle: rather than requiring every 
+  user to obtain credentials from every resource provider, the AARC model interposes a Community AAI layer that translates the user’s existing institutional 
+  identity into the authorisation assertions each resource provider requires. The 2019 edition of the Blueprint Architecture, formally published by 
+  the AARC consortium on Zenodo \parencite{aarc2019blueprint}, codifies this into a five-layer model and introduces the Community AAI component now deployed at EGI, 
+  EOSC, and WLCG as the standard federated access framework.
+
+Under the AARC model, researchers authenticate using their institutional credentials through their national identity federation, and an attribute 
+authority (such as VOMS or the AARC Group Manager) asserts their VO membership and role attributes to grid services as signed tokens. The transition 
+to token-based authentication using JWT (JSON Web Tokens) and the WLCG Token-Based Authentication standard has been underway since 2022 across major 
+grid infrastructures including the WLCG and EGI, and represents the most significant evolution in grid security since the original GSI design — as 
+documented by Dack et al. \parencite{dack2024wlcg}, who describe the WLCG Authorization Working Group’s seven-year programme to replace X.509 proxy delegation with 
+capability-based tokens across all LHC experiments and computing sites. 
+
+The SciTokens project, described by Withers, Bockelman, Weitzel, Brown, 
+Gaynor, Basney, Tannenbaum, and Miller \parencite{withers2018scitokens} in their PEARC ’18 paper published in the ACM Digital Library, established the capability-token model 
+that now underpins this transition: by encoding authorisations directly into OAuth 2.0 JSON Web Tokens rather than relying on identity impersonation 
+through X.509 proxy certificates, SciTokens allows grid workflows to convey precise, workflow-specific permissions — for example, read access to a 
+specific dataset directory — to remote services while eliminating the risks of broad credential delegation. The normative specification for how 
+SciTokens-style capability tokens are structured within the WLCG context is the WLCG Common JWT Profiles document \parencite{altunay2019wlcg}, published on Zenodo, which defines the token claims, issuer requirements, and validation procedures that every WLCG
+ site must implement to accept bearer tokens from any authorised VO.
+
+  The CILogon federated identity service, documented by Basney, Fleury, and Gaynor  \parencite{basney2014} in Concurrency and Computation:
+   Practice and Experience, integrates grid PKI with institutional identity providers using SAML
+  and OpenID Connect federation standards; it serves as the token issuer for numerous US open-science communities and bridges the legacy grid 
+  security world with the contemporary federated identity framework, enabling researchers at institutions connected to InCommon or eduGAIN to 
+  obtain grid-compatible tokens using their existing institutional login without any separate grid certificate registration.
+
+
+\subsection*{Authorisation: VOMS, XACML, and Attribute-Based Access Control}
+Authentication establishes identity; authorisation determines what an authenticated identity is permitted to do — and in a multi-domain grid environment,
+ these are deeply distinct problems. Grid authorisation has evolved through three generations, each adding expressiveness in response to the limitations
+  of its predecessor. The first generation, the gridmap file, was a static, per-site text file maintained by local administrators that mapped each 
+  user’s X.509 Distinguished Name to a local Unix account; it required manual updates at every site for every new user and was entirely incapable
+   of expressing VO-level roles or fine-grained permissions. The second generation, VOMS (Virtual Organization Membership Service), addressed this
+    by embedding VO membership and role attributes directly into signed extensions of proxy certificates, so that a single VOMS attribute certificate
+     could carry the user’s group memberships and roles to every site in the federation without per-site manual configuration. Alfieri, Cecchini,
+      Ciaschini, dell’Agnello, Frohner, Lörentey, and Spataro \parencite{alfieri2005voms}, in the definitive peer-reviewed account of VOMS published in Future Generation 
+      Computer Systems — already cited in Section 3.2 — show that VOMS fundamentally changed the operational model of grid authorisation: rather than 
+      resource sites managing per-user access lists, the VO manages a central membership database and issues signed attribute assertions that resource 
+      sites honour through VOMS-aware access control frameworks. 
+      
+      The third generation, Attribute-Based Access Control (ABAC) using the XACML 
+      (eXtensible Access Control Markup Language) policy language, moves beyond VO membership to express rich combinations of user attributes 
+      (VO membership, role, institution, assurance level), resource attributes (resource type, data sensitivity, classification), and environmental
+       conditions (time of day, network location, current load). Garzoglio, Alderman, Altunay, Ananthakrishnan, Bester, Chadwick, Ciaschini, 
+       Demchenko, Ferraro, Forti, and colleagues \parencite{garzoglio2009interoperability}, in their peer-reviewed paper on the definition and implementation of a SAML-XACML profile 
+       for authorisation interoperability across grid middleware in OSG and EGEE, published in the Journal of Grid Computing, document the first 
+       production deployment of XACML-based grid authorisation: by defining a common SAML-XACML attribute and obligation profile that both OSG and
+        EGEE middleware could implement, this work enabled, for the first time, policy-based authorisation decisions that were consistent across 
+        two otherwise architecturally distinct grid infrastructures — demonstrating that ABAC is not merely a theoretical improvement over VOMS but 
+        a practically deployable, production-tested authorisation model for multi-domain scientific grids.
+
+The INDIGO-IAM (Identity and Access Management) service represents the convergence of all three authorisation generations — identity federation, 
+VO attribute management, and token-based access control — into a single production-deployed service. Ceccanti, Vianello, Caberletti, Costantini, 
+Guarise, Italiano, Maraschini, Misurelli, Nardelli, Pace, and Ronchieri \parencite{ceccanti2017indigo}, in the peer-reviewed paper “The INDIGO-DataCloud Authentication 
+and Authorization Infrastructure” published in the Journal of Physics: Conference Series, describe how INDIGO-IAM was architected to replace the 
+fragmented AAI landscape of pre-EOSC European grid infrastructure. 
+
+The system combines OIDC-based authentication with fine-grained group and role
+ management, SCIM provisioning for account lifecycle management across services, and token exchange capabilities that allow a user’s institutional
+  OpenID Connect identity to be translated into the VO membership assertions and authorisation tokens that downstream grid services require. 
+  Critically, INDIGO-IAM implements account linking — the ability to associate multiple external identity credentials
+   (OpenID Connect accounts from different providers, legacy X.509 certificates, and SSH keys) with a single persistent IAM identity — enabling
+    the incremental migration from X.509-based grid access to token-based federated access without requiring users to abandon their existing 
+    credentials or workflows during the transition. The INDIGO-IAM software is maintained as an open-source project and was formally released on
+     Zenodo \parencite{agostini2024indigo}. As of 2024,
+      INDIGO-IAM is deployed as the reference IAM service for the EOSC and EGI federations, directly implementing the AARC Blueprint 
+      Architecture described in Section 3.4 — making it the production realisation of the complete three-generation authorisation evolution 
+      from gridmap files to attribute-based federated identity that this section has traced.
+
+\subsection*{Major Middleware Platforms}
+
+\subsubsection*{The Globus Platform}
+The Globus platform, evolved from the Globus Toolkit through a decade of architectural redesign, is the most widely deployed grid and research
+ computing middleware in the world as of 2025. Unlike its predecessor, which was distributed as open-source software that each site installed
+ and operated independently, the contemporary Globus platform is delivered primarily as a cloud-hosted service with lightweight software agents 
+ (Globus Connect Personal and Globus Connect Server) deployed at each participating endpoint. Core Globus services include: Globus Transfer for 
+ high-performance wide-area data movement using GridFTP over TLS; Globus Auth for federated identity and OAuth 2.0 authorisation, implementing 
+ the AARC Community AAI model described in Section 3.4; Globus Compute (formerly funcX) for function-as-a-service execution across distributed 
+ resources including HPC clusters and cloud VMs; and Globus Flows for orchestrating multi-step data management and computation workflows. Chard,
+  Pruyne, McKee, Bryan, Raumann, Ananthakrishnan, Chard, and Foster \parencite{chard2023}, in their peer-reviewed paper on Globus Automation Services published 
+  in Future Generation Computer Systems, document how Globus Flows enables the specification of research processes as reusable, cloud-hosted workflows 
+  spanning scientific instruments, data stores, and computing resources over timescales from seconds to weeks — precisely the multi-step, 
+  long-running workflows that the Collective layer of Section 1.2's hourglass architecture was designed for. Globus Transfer handles more 
+  than 1 exabyte of data transfers annually across the US research computing ecosystem and is the de facto standard for inter-site data movement 
+  \parencite{chard2023}.
+
+  \subsubsection*{EGI, DIRAC, and European Infrastructure}
+  The European Grid Infrastructure (EGI) coordinates a federation of grid and cloud resources from more than 30 European countries. 
+  EGI’s middleware strategy has shifted from the monolithic gLite stack toward a modular ecosystem of independently deployable components:
+   the EGI DataHub for federated data access through OneData, OpenStack-based cloud IaaS through the OCCI API, and the EGI Workload Manager 
+   based on DIRAC. DIRAC (Distributed Infrastructure with Remote Agent Control), originally developed for the LHCb experiment at CERN 
+   around 2000, employs an agent-based architecture in which lightweight pilot agents deployed at each site actively pull work from central 
+   job queues rather than passively waiting for job submissions from the scheduler. This pull-based design provides exceptional resilience 
+   to site failures and network instability: if a site becomes unavailable, its pilot agents simply stop pulling work, and no jobs are lost 
+   or stranded at the inaccessible site. Stagni, Boyer, Tsaregorodtsev, Lytovchenko, Sailer, Haen, Burr, Bauer, Fayer, Martyniak, and Serfon \parencite{stagni2024dirac},
+    in the most recent peer-reviewed account of DIRAC published in EPJ Web of Conferences at CHEP 2023, describe the ongoing transition of DIRAC 
+    toward its next-generation incarnation DiracX — a complete architectural rewrite using modern cloud-native technologies 
+    (FastAPI, OpenAPI, Elasticsearch, and OAuth 2.0 token-based authentication) while maintaining backward compatibility with existing DIRAC 
+    installations. This evolution directly mirrors the broader grid security transition documented in Section 3.4: DiracX’s native token-based AAI 
+    replaces the legacy X.509 proxy certificate model that the original DIRAC inherited from the GSI. DIRAC currently manages workloads across more 
+    than 100 grid sites and has been adopted by communities in astrophysics, bioinformatics, and climate science beyond its origins in high-energy
+    physics \parencite{stagni2024dirac}.
+
+    \subsubsection{HTCondor and High-Throughput Computing}
+    HTCondor, developed at the University of Wisconsin-Madison’s Center for High Throughput Computing since 1984, is optimised for high-throughput 
+    computing (HTC) — executing very large numbers of independent jobs to maximise aggregate completion rate rather than minimising the latency of 
+    any individual job. HTCondor’s ClassAd matchmaking language allows extraordinarily flexible expression of job requirements and resource capabilities,
+     enabling automatic matching across arbitrary combinations of attributes including CPU architecture, memory, software availability, network connectivity, 
+     and user-defined site policies. Bockelman, Livny, Lin, and Prelz \parencite{bockelman2020htcondorce}, in their peer-reviewed paper on the translational journey of the 
+     HTCondor-CE published in the Journal of Computational Science, document how the HTCondor Compute Entrypoint (CE) — the component that
+      enables HTCondor’s job management model to operate at grid site boundaries — evolved from an OSG-specific tool into a general-purpose grid gateway 
+      now deployed at sites across OSG, EGI, and WLCG. The paper’s translational framing is instructive: it shows that HTCondor’s architecture of 
+      decentralised matchmaking and flexible ClassAd policies is precisely what enables it to interoperate across the heterogeneous site policies 
+      and resource types that multi-domain grid environments contain. The Open Science Pool (OSPool), managed by the OSG Consortium and based on 
+      HTCondor, provided more than 850 million CPU core-hours to US open-science researchers in 2023 — making it one of the most productive research computing infrastructures in the world  \parencite{graur2023}.
+
+      \subsubsection{UNICORE for HPC Integration}
+      UNICORE (Uniform Interface to Computing Resources), developed in Germany and widely adopted across European HPC centres, provides a gateway-based 
+      integration approach particularly well suited to connecting traditional HPC batch computing environments to grid and cloud access layers.
+       The UNICORE architecture centres on a layered gateway model in which a client-facing UNICORE/X gateway component translates job submission 
+       requests — expressed in the Job Submission Description Language (JSDL) or UNICORE’s REST API — into the local resource manager’s native format,
+        whether SLURM, PBS, or LSF, insulating users and upper-level grid services from the heterogeneity of site-local schedulers. Benedyczak, Bała, 
+        and Streit (2016), in the peer-reviewed account of the UNICORE 7 architecture published in the proceedings of the 2011 IEEE/ACM International 
+        Conference on Grid Computing, document the layered UNICORE design and its integration with grid security and job management standards. Recent
+         UNICORE versions have introduced REST API support alongside the existing SOAP-based interface, support for OIDC-based authentication through 
+         the AARC framework, and container job execution through Singularity/Apptainer — each of these additions directly implementing the architectural
+          transitions described in Sections 3.4 and 3.5. UNICORE remains the primary grid-to-HPC integration middleware at major European HPC centres
+           and is one of the reference access implementations recognised by the EOSC Interoperability Framework \parencite{aarc2019blueprint}.
 
 \section*{Challenges, Case Studies, and Emerging Paradigms}
-% Your content here...
+Sections I, II, and III established the technical architecture of Distributed Grid Computing: the layered hourglass model and its service-oriented 
+evolution (Section I); the scheduling, data locality, and workflow management mechanisms that orchestrate work across federated infrastructures 
+(Section II); and the security infrastructure and middleware platforms that make cross-institutional trust and interoperability possible (Section III).
+ Section IV now completes the analysis by examining four interconnected dimensions: the persistent and emerging challenges that the technologies of 
+ Sections I–III must address; concrete case studies demonstrating how production grid infrastructures have applied these technologies to some of the 
+ most significant scientific problems of the 21st century; and the convergence of grid, cloud, and edge computing paradigms that is defining the 
+ structural direction of the field. The challenges examined in Section 4.1 are not independent problems but consequences of the architectural and 
+ operational choices analysed in Sections I–III: the heterogeneity problem is the operational face of Section I’s governance challenge; the 
+ scalability problem is the operational face of Section II’s scheduling complexity; the sustainability problem connects directly to the energy 
+ cost of the data movement infrastructure described in Section 2.4. The case studies in Section 4.2 similarly demonstrate that the production 
+ realisations of grid computing — the WLCG, OSPool, ESGF, and GISAID — are not simply applications of the preceding sections’ principles but 
+ stress tests that have driven the evolution of those principles, most directly in the HL-LHC computing challenge that motivated both the data 
+ locality innovations of Section 2.4 and the token-based security transition of Section 3.4. The convergence analysis of Section 4.3 then frames 
+ the forward trajectory of the field: hybrid grid-cloud architectures, edge computing integration, and AI-augmented scheduling represent not 
+ replacements for the architecture of Sections I–III but extensions of it, each preserving the federated governance model that makes grid computing 
+ institutionally viable while substantially expanding the range of resources and workloads it can accommodate.
+
+\subsection*{Current Challenges}
+\subsubsection*{Heterogeneity and Interoperability}
+The heterogeneity of grid environments
+— in hardware, software, middleware versions, and administrative policies — remains the most persistent operational challenge. 
+A grid spanning dozens of sites must manage differences in CPU architectures, operating system versions, 
+installed software libraries, local batch scheduler interfaces, storage system protocols, and network connectivity. 
+Containerisation has emerged as one of the most effective responses to software heterogeneity. Kurtzer, Sochat, and Bauer \parencite{kurtzer2017}, 
+in the peer-reviewed paper “Singularity: Scientific containers for mobility of compute” published in PLOS ONE, describe how the 
+Singularity container runtime — now continued as the Apptainer project under the Linux Foundation — was designed specifically for
+ HPC and grid environments with the requirement that containers must not require root privileges to execute. This design constraint, 
+ absent from Docker and other enterprise container runtimes, is what makes Singularity/Apptainer deployable in shared, multi-user grid
+  environments without compromising site security policies. By packaging scientific applications with their complete software dependency
+   stack — including libraries, compilers, and runtime environments — in a single portable image, Apptainer allows jobs submitted to 
+   heterogeneous grid sites to execute in reproducible, identical software environments regardless of what is installed on the host system.
+    The adoption of containerised application delivery across OSG, EGI, and WLCG has significantly reduced the software deployment friction 
+    that previously complicated multi-site deployments, and is now considered a prerequisite capability for any production grid site.
+
+\subsubsection*{Scalability and Information Management}
+As grid infrastructures scale to hundreds of sites and millions of jobs per day, the information management systems underpinning resource discovery 
+and job monitoring face significant scalability challenges. Traditional hierarchical LDAP-based information systems — such as the original MDS
+ (Monitoring and Discovery Service) in the Globus Toolkit described in Section 2.2 — struggle to maintain consistent, current information across 
+ hundreds of sites with thousands of compute nodes and dynamic resource availability. Propagation delays inherent in hierarchical information 
+ aggregation can result in scheduling decisions based on stale resource state information, leading to job failures or suboptimal placements — exactly 
+ the staleness problem that Section 2.2 identified as the fundamental limitation of polling-based information architectures. The EGI and WLCG have 
+ addressed this by deploying unified monitoring frameworks based on time-series databases and message brokers, as documented by Aimar, Aguado Corman, 
+ Andrade, Delgado Fernandez, Garrido Bear, Karavakis, Marek Kulikowski, and Magnoni \parencite{aimar2019monit} for the WLCG MONIT infrastructure, providing near-real-time
+  visibility at a scale not achievable with traditional polling approaches. 
+  
+  The scalability challenge has intensified with the onset of LHC Run 3 in 2022, 
+  which substantially increased monitoring data volumes across all WLCG experiments. Jashal, Kuznetsov, Legger, and Uzunoglu (2024), on behalf of the
+   CMS Collaboration, in their CHEP 2023 paper published in EPJ Web of Conferences, document how CMS evolved its Run 3 monitoring infrastructure from 
+   bespoke custom-built applications toward a common open-source stack — built on ElasticSearch, VictoriaMetrics, Prometheus, InfluxDB, and 
+   Grafana — deployed on Kubernetes clusters to handle the heterogeneous monitoring data produced by workload management, data management, and 
+   submission infrastructure across approximately 150 sites worldwide. Kim and Bourilkov \parencite{kim2024}, also in EPJ Web of Conferences at CHEP 2023,
+    demonstrate how machine learning applied to the XRootD monitoring data harvested from the LHC computing infrastructure via the MONIT Elasticsearch 
+    database enables automatic detection of underperforming or failing grid components — closing the loop between the near-real-time monitoring 
+    architecture of MONIT and the AI-enhanced operational intelligence discussed in Section 4.1.3. Together, these two 2024 papers confirm that 
+    scalable monitoring in production grid infrastructures is no longer just a data collection and display problem but an active site-reliability
+     engineering challenge requiring the full DevOps monitoring stack and, increasingly, machine learning for automated anomaly detection at the 
+     scale of hundreds of sites and millions of daily jobs.
+
+\subsubsection{Artificial Intelligence Integration}
+The integration of AI and machine learning into grid computing operations is one of the most active research areas in 2024–2025, directly extending 
+the algorithmic foundations laid in Section 2.3’s examination of ML-enhanced scheduling. AI is being applied across four principal dimensions in 
+contemporary grid environments. The first is predictive scheduling: using machine learning models trained on historical job traces to predict resource 
+requirements and run times, enabling schedulers to make better-informed placement and backfill decisions. Zrigui, de Camargo, Legrand, and Trystram \parencite{zrigui2022online},
+ in their peer-reviewed paper in the Journal of Parallel and Distributed Computing, demonstrate that online classification of jobs as “small” or “large” 
+ based on historical runtime data — rather than user-provided upper bounds, which are notoriously unreliable — significantly improves scheduling metrics 
+ including queue wait time and overall system utilisation, with the classifier adapting continuously to workload shifts. The second dimension is 
+ workflow-level deep reinforcement learning (DRL): training neural network policies to make sequential scheduling decisions over entire DAG-structured 
+ scientific workflows rather than individual jobs. Koslovski, et al. \parencite{koslovski2024}, in their peer-reviewed paper on DAG-based workflow
+  scheduling using Actor-Critic Deep Reinforcement Learning published in Future Generation Computer Systems, show that DRL policies trained on synthetic
+   and real workflow traces outperform classical heuristics (HEFT, list scheduling) on heterogeneous grids — confirming that the NP-completeness of 
+   multi-objective grid scheduling identified by Hegde et al. \parencite{hegde2024} in Section 2.1 is precisely the kind of intractable decision space where learned 
+   policies have a structural advantage over fixed heuristics. The third dimension is anomaly detection: using unsupervised learning to identify unusual
+    monitoring patterns indicating resource failures or security incidents, as discussed in Section 4.1.2’s account of Kim and Bourilkov (2024)’s ML-based
+     monitoring of the WLCG infrastructure. The fourth, and most recent, dimension is LLM-assisted usability: translating natural language job
+      specifications into formal job submission descriptions for non-specialist users. Adimora, Gundla, and Sun \parencite{adimora2025hpc}, in their comprehensive survey 
+      of machine learning for HPC scheduling published in Cluster Computing, document all four dimensions and identify LLM-assisted job description
+       translation as a particularly promising emerging application, while also identifying prompt injection as a new attack surface requiring careful
+        mitigation in any deployment that exposes LLM interfaces to untrusted user input. The convergence of these four AI dimensions — predictive 
+        scheduling, reinforcement learning for workflow optimisation, anomaly detection, and LLM-assisted usability — suggests that the next generation 
+        of grid middleware will be characterised not by static heuristics but by continuously learning, adaptive operational intelligence trained on the 
+        rich job and monitoring telemetry that production grids generate at scale.
+
+\subsubsection{Data Management at Exascale}
+The volumes of scientific data that grid infrastructure must manage are growing at rates that challenge current storage, network, and software
+ infrastructure simultaneously. The Square Kilometre Array (SKA) telescope, under construction in South Africa and Australia, represents the most 
+ demanding data challenge in the history of scientific computing. Scaife \parencite{scaife2020}, in the peer-reviewed paper “Big telescope, big data: towards 
+ exascale with the Square Kilometre Array” published in Philosophical Transactions of the Royal Society A, documents that each SKA telescope phase 
+ is expected to produce approximately 300 petabytes per year of observatory-level data products, resulting in an archive of approximately 8.5 exabytes
+  over the 15-year lifespan of the initial high-priority science programmes. Crucially, Scaife explains that the raw data rates from the SKA 
+  antennas — approximately 0.5–1 terabytes per second per telescope — are far too large to distribute: the SKA’s Science Data Processors must 
+  perform in-situ calibration and imaging at each telescope site, reducing the data to manageable science products before distribution to a global 
+  network of SKA Regional Centres (SRCNet) for further analysis. The SRCNet architecture, endorsed by the SKAO governing council in March 2024, is 
+  explicitly modelled on the WLCG’s tiered data distribution model described in Section 2.4, and adopts Rucio — the same distributed data management
+   system used by WLCG — as its core data distribution layer, with Rucio Storage Elements at each Regional Centre node replicating observatory data 
+   products according to demand and network topology. Managing, distributing, and preserving this data will therefore require not just larger versions
+    of existing infrastructure but qualitatively new approaches to computation-to-data architecture, federated storage governance, and metadata management.
+     FAIR data management practices — now mandated by the European Commission and major US funding agencies — add explicit requirements for metadata 
+     cataloguing, persistent identifier assignment, and standardised data access \parencite{wilkinson2016fair}. The SKAO has explicitly committed to
+      delivering SKA data under FAIR principles through the SRCNet, making it the first observatory-scale scientific data grid to embed FAIR 
+      compliance as a first-class design requirement from the outset rather than as a retrofit.
+ 
+      \subsubsection{Environmental Sustainability}
+The environmental impact of large-scale computing infrastructure has become a significant concern as research organisations commit to carbon neutrality 
+targets mandated by funding agencies and national governments. Britton, Campana, and Panzer-Stradel \parencite{britton2024energy}, in their peer-reviewed paper “A holistic
+ study of the WLCG energy needs for the LHC scientific program” published in EPJ Web of Conferences at CHEP 2023, provide the most authoritative 
+ published estimate of the WLCG’s energy consumption: the infrastructure is distributed across more than 170 data centres in over 40 countries, and 
+ its total energy consumption and projected evolution through the HL-LHC era depend on a complex interplay of luminosity, data volume, software efficiency,
+  and the Power Usage Effectiveness (PUE) of individual data centre facilities. Britton et al. analyse how improvements in each of these
+   dimensions — more efficient LHC experiment software, new hardware architectures, and modernised data centres — can substantially reduce the 
+   WLCG’s energy footprint per unit of scientific output even as the absolute data volume grows. At the site level, the environmental cost of grid 
+   computing is highly geography-dependent. Researchers at Imperial College London \parencite{imperial2024environmental}. Grid infrastructure operators are increasingly
+     adopting energy-aware scheduling strategies that direct workloads toward sites powered by renewable energy and schedule computationally intensive 
+     jobs during periods of low carbon-intensity electricity. ARM-based processor deployments at WLCG Tier-1 and Tier-2 sites — which the Glasgow and
+      GridKa measurements confirm deliver approximately one-third lower energy consumption than equivalent x86 processors for the same HEP 
+      workloads — represent a hardware-level response to the same sustainability imperative. The convergence of energy-aware scheduling, 
+      renewable electricity procurement, and power-efficient hardware is now central to the WLCG’s roadmap for delivering the HL-LHC scientific 
+      programme within the energy constraints that site operators and funding agencies are increasingly imposing.
+
+\subsection*{Case Studies}
+
+\subsubsection{The Worldwide LHC Computing Grid (WLCG) and LHC Run 3}
+The Worldwide LHC Computing Grid (WLCG) remains the world’s largest scientific grid, linking more than 170 computing centres in 42 countries to 
+process data from the Large Hadron Collider at CERN. The LHC’s Run 3, which began in 2022 after a three-year shutdown for accelerator and detector
+ upgrades, substantially increased data volumes. The ATLAS Collaboration \parencite{atlas2025software}, in the comprehensive paper “Software and Computing for Run 3 of 
+ the ATLAS Experiment at the LHC” published in the European Physical Journal C, document that the upgraded LHC generates raw data at rates that
+  will reach 3 exabytes per year by the time of the High-Luminosity LHC (HL-LHC) upgrade planned for the early 2030s. The paper provides the most
+   complete and up-to-date account of how the ATLAS experiment has evolved its entire software and computing stack — from detector simulation and
+    event reconstruction through data management and distributed analysis — to operate efficiently across the heterogeneous WLCG infrastructure at 
+    Run 3 data rates, using containerised software environments, GPU-accelerated reconstruction, and data formats with up to 50-fold compression 
+    ratios compared to earlier generations. In response to these increased data volumes, the PanDA workload management system, coordinating ATLAS’s 
+    use of WLCG resources and extending to cloud and HPC facilities, processed more than 2 billion computational tasks in 2023 across more than 180
+     computing sites worldwide \parencite{maeno2024panda}.
+
+     \subsubsection*{The Open Science Grid and Gravitational Wave Astronomy}
+The OSG Consortium’s Open Science Pool (OSPool) has become one of the most productive research computing infrastructures for US open science. 
+The LIGO-Virgo-KAGRA (LVK) collaboration uses OSPool resources extensively for the computationally intensive matched-filter analysis required
+ to search for gravitational wave signals in detector data. The fourth observing run (O4), which began in 2023, is detecting gravitational wave 
+ events at an average rate of approximately one per week — a pace achievable only because of the distributed computing capacity provided by the 
+ OSPool and allied grid resources. Andrijauskas, Weitzel, and Wuerthwein \parencite{andrijauskas2024osdf}, in their peer-reviewed paper on the Open Science Data Federation 
+ published in the ACM PEARC ’24 proceedings, document OSPool operations including its scale of more than 850 million CPU core-hours provided to open 
+ science projects at zero marginal cost to individual research groups, demonstrating the economic value of the cooperative grid model. The LVK case 
+ is particularly instructive for grid computing: the computational bottleneck in gravitational wave detection is not the detectors themselves but the 
+ matched-filter analysis that must correlate gigabytes of detector data against banks of hundreds of thousands of theoretical waveform templates — an 
+ embarrassingly parallel workload that maps almost perfectly onto the high-throughput computing model that OSPool and HTCondor were designed for, 
+ illustrating why the grid computing paradigm has proven so durable for data-intensive scientific discovery.
+
+  \subsubsection{Grid Computing in Genomics: The COVID-19 Response}
+  The COVID-19 pandemic generated unprecedented demand for large-scale genomic analysis, and the response demonstrated both the power 
+  and the limitations of distributed data grid infrastructure at global scale. The GISAID initiative — originally established as a global 
+  data grid for influenza genomic surveillance and documented by Shu and McCauley \parencite{shu2017gisaid} in Eurosurveillance — pivoted rapidly to become
+   the primary repository for SARS-CoV-2 genome sequences, hosting more than 15 million viral genomes by 2023. GISAID’s architecture — a 
+   federated database with data nodes at institutions in multiple countries, providing open access under a data use agreement that balances 
+   openness with attribution — is precisely the kind of distributed data grid infrastructure described in Sections 2.4 and 2.5: it provides
+    the data locality, provenance tracking, and standardised access protocols that made continuously updated phylogenetic analyses of variant
+     emergence possible across hundreds of research groups worldwide, as documented by Chen, Deng, Fang, Sun, Wu, Che, and colleagues \parencite{chen2022global} 
+     in their survey of the global landscape of SARS-CoV-2 genomic surveillance published in Nature Genetics. The Folding@home distributed 
+     computing project pivoted rapidly in March 2020 to focus on SARS-CoV-2 protein structure prediction. At its peak, Folding@home harnessed
+      more than 2.4 exaFLOPS of computing power from more than 700,000 volunteer computers worldwide — briefly making it the most powerful 
+      distributed computing system ever assembled. Zimmerman, Porter, Ward, Singh, Vithani, Meller, and colleagues \parencite{zimmerman2021exascale}, in their peer-reviewed
+       paper published in Nature Chemistry, document how this distributed simulation capacity enabled the discovery of cryptic pockets across the 
+       SARS-CoV-2 proteome, including dramatic spike protein opening far beyond that observed experimentally, revealing new targets for antiviral 
+       design that would have been computationally inaccessible without the exascale capacity that Folding@home’s distributed architecture provided.
+
+\subsubsection{The Earth System Grid Federation}
+The Earth System Grid Federation (ESGF) is a peer-to-peer data grid that distributes climate model output from the Coupled Model 
+Intercomparison Project (CMIP) to researchers worldwide. Petrie, Denvil, Ames, Levavasseur, Fiore, Allen, Antonio, Berger, Bretonnière, 
+Cinquini, Dart, Dwarakanath, Druken, Evans, Franchistéguy, Gardoll, Gerbier, Greenslade, Hassell, Iwi, Juckes, Kindermann, Lacinski, Mirto, 
+Nasser, Nassisi, Nienhouse, Nikonov, Nuzzo, Richards, Ridzwan, Rixen, Serradell, Snow, Stephens, Stockhause, Vahlenkamp, and Wagner \parencite{petrie2021cmip6}, 
+in the definitive peer-reviewed account of the ESGF’s CMIP6 data distribution operations published in Geoscientific Model Development, document 
+that CMIP6 generated more than 20 petabytes of climate simulation data from over 100 global climate models at institutions in 30 countries, 
+distributed through ESGF’s network of primary data nodes in North America, Europe, and Asia-Pacific, serving more than 50,000 registered users. 
+ESGF plays a direct role in the architectural principles examined throughout this paper: it implements the standardised data formats
+ (NetCDF/CF conventions), standardised access protocols (OPeNDAP, GridFTP, HTTPS), federated metadata cataloguing, and persistent identifier 
+ assignment that the FAIR data management framework of Section 4.1.4 requires. ESGF played a critical role in supporting the science underlying 
+ the IPCC Sixth Assessment Report (AR6) \parencite{boehm2022ipc}. The ability to compare model output across dozens of independent modelling 
+ groups — made possible by ESGF’s standardised data formats and access protocols — was essential to the AR6’s characterisation of climate model
+  uncertainty and the robustness of its projections.
+
+\subsubsection{Grid Computing Access in Kenya and Africa}
+In the African context, Distributed Grid Computing infrastructure has been developing along two complementary tracks: the construction of national 
+research and education network (NREN) connectivity that provides the bandwidth prerequisite for grid participation, and the acquisition of grid 
+credentials and access to international computing resources through that connectivity. Murumba and Micheni \parencite{murumba2017kenyan}, in their peer-reviewed paper 
+“Grid Computing for Collaborative Research Systems in Kenyan Universities” published in The International Journal of Engineering and Science, 
+provide the most complete academic account of how KENET’s infrastructure enables Kenyan university researchers to access international grid 
+computing resources. They document that KENET digital certificates — issued by the KENET Certification Authority, which is accredited by 
+EUGridPMA within the IGTF trust framework described in Section 3.2 — are accepted on both the Africa Grid and the European Grid (EGI), 
+giving researchers at KENET member institutions access to enormous computing and storage resources that would otherwise be beyond the 
+reach of any single Kenyan institution. The paper also documents KENET’s 2016 training workshop on grid infrastructure and science gateways,
+ held at the University of Nairobi and attended by more than 25 researchers and PhD students from Kenyan universities — confirming that the 
+ University of Nairobi scenario described in Section 3.1 of this paper is not hypothetical but reflects a documented, active participation pattern.
+  Kenyan researchers in bioinformatics, epidemiology, and climate science access WLCG, OSG, and EGI grid resources through KENET’s connectivity,
+   enabling participation in international research collaborations — including the GISAID genomic surveillance described in Section 4.2.3 — that 
+   would be impractical with local computing resources alone. The continued expansion of grid computing access to African research 
+   institutions — through KENET’s IGTF-trusted credential infrastructure, UbuntuNet Alliance’s regional backbone, and the AfricaConnect
+    EU-funded projects — represents an important and ongoing dimension of the global democratisation of scientific computing.
+
+\subsection{The Convergence of Grid, Cloud, and Edge Computing}
+|\subsubsection{Hybrid Grid-Cloud Architectures}
+The relationship between grid computing and cloud computing has evolved from perceived competition to productive complementarity, 
+driven by the recognition that dedicated grid infrastructure and commercial cloud resources each have structural advantages that the other cannot 
+replicate. Dedicated grid infrastructure provides predictable, long-term capacity under institutional control, deep integration with 
+community-specific data and software environments, and data sovereignty — the guarantee that sensitive research data does not leave 
+institutional-controlled storage. Commercial cloud resources from providers such as AWS, Google Cloud, and Azure provide elastic scaling for peak 
+demand without permanent infrastructure investment, access to specialist hardware (high-memory instances, FPGA accelerators, GPU clusters) that no 
+single institution can afford to maintain continuously, and global geographic distribution for workloads requiring low-latency access to diverse 
+data sources. 
+
+Contemporary research computing environments deploy hybrid architectures that combine both. The NSF’s ACCESS programme, documented
+ by Boerner, Deems, Furlani, Knuth, and Towns \parencite{boerner2023access} in their PEARC ’23 paper, formally embodies this hybrid model: ACCESS provides a coordinated
+  portfolio of national HPC resources alongside cloud allocations and science gateways, with allocation and access managed through a common 
+  framework — precisely the federated resource management architecture described in Section 2.1. Wu, Tang, Yu, Yang, and Sun \parencite{wu2025task}, in their 
+  survey of task scheduling in geo-distributed computing published in IEEE Transactions on Parallel and Distributed Systems, document how 
+  cloud bursting — the dynamic overflow of grid workloads to commercial cloud capacity during demand peaks — has become a standard operational
+   strategy for WLCG Tier-1 and Tier-2 sites, with the principal technical challenge being the minimisation of data movement costs when cloud
+    instances must access data stored in on-premises grid storage systems. The Globus platform provides this capability through Globus Compute 
+    and Globus Transfer services that abstract over the heterogeneity of underlying computing and storage environments — whether traditional
+     grid batch systems or cloud virtual machines — behind consistent REST APIs \parencite{chard2023}.
+
+\subsubsection{Edge Computing and Real-Time Scientific Grids}
+The growing volume of data generated by scientific instruments at remote field sites has motivated the integration of edge computing into grid
+ architectures. Rather than transmitting all raw sensor data to centralised data centres, edge computing deploys processing capacity at or near 
+ the data source, performing initial data reduction before transmitting significantly compressed data products to the central grid. The SKA 
+ telescope is the most dramatic example. Scaife \parencite{scaife2020}, in the authoritative account of SKA computing published in Philosophical Transactions 
+ of the Royal Society A, documents that each SKA telescope is expected to produce approximately 300 petabytes per year of science-ready data 
+ products after on-site processing — data rates that are only achievable because the SKA’s Central Signal Processor performs real-time correlation 
+ and calibration at the telescope site, reducing terabytes-per-second raw antenna streams to manageable science data products before distribution 
+ through the global SRCNet data grid. 
+ 
+ The SKAO website confirms that the two SKA Science Data Processors will each operate at approximately 130–135 
+ petaFLOPS — comparable to the current top-ranked supercomputers on the TOP500 list — making the SKA’s on-site edge processing infrastructure one of
+  the most computationally intensive scientific edge deployments ever attempted. This edge-grid architecture directly implements the data locality
+   principles analysed in Section 2.4: computation is performed as close to the raw data as physically possible, with only reduced, science-ready 
+   products distributed to the global analysis grid — the same principle that motivates Rucio’s replica-aware scheduling in the WLCG, applied at 
+   the extreme of the data-volume spectrum. Designing, building, and operating this global data grid infrastructure for the SKA is one of the most
+    technically challenging distributed systems engineering problems currently under active development.
+
+\subsubsection{AI and Machine Learning Workloads on Grid Infrastructure}
+The rapid growth of AI and machine learning as tools for scientific data analysis has created new demands on grid infrastructure that extend the 
+scheduling and data management challenges examined in Sections 2.1–2.3. Training large deep learning models requires GPU computing resources and
+ the ability to distribute training across multiple nodes — a workload pattern characterised by tightly coupled, communication-intensive parallel 
+ tasks that is fundamentally different from the embarrassingly parallel, loosely coupled job streams for which traditional grid schedulers were optimised. 
+ This distinction matters architecturally: the HTCondor and PanDA scheduling models described in Section 3.6 were designed for workloads where jobs are 
+ largely independent; distributed deep learning frameworks such as Horovod and PyTorch Distributed require instead that co-scheduled jobs communicate 
+ continuously during training, making gang scheduling and network topology awareness first-class scheduler requirements. 
+ 
+ Grid middleware platforms are 
+ being extended to support GPU-enabled job submission, checkpoint-based fault tolerance for long-running training jobs, and these tightly-coupled 
+ distributed training frameworks, as documented by Adimora, Gundla, and Sun \parencite{adimora2025hpc} in their comprehensive survey of machine learning for HPC and 
+ grid scheduling published in Cluster Computing. The EGI Notebooks service and PANGEO cloud-native geoscience analytics platform represent emerging 
+ models for making grid and cloud resources accessible for AI/ML scientific workflows through familiar Jupyter notebook interfaces, combining the 
+ data access capabilities of distributed data grids with the interactive computing environment of cloud platforms. Calatrava and colleagues \parencite{calatrava2023},
+  in their survey of EOSC services for multidisciplinary scientific applications published in Computer Science Review, document how the EOSC’s 
+  federated resource portfolio — encompassing cloud, HPC, and data services — is being progressively extended to support AI-intensive scientific 
+  workflows, with the EGI Notebooks and PANGEO integrations representing the user-facing layer of a multi-tier infrastructure that descends through 
+  the AARC-federated identity framework of Section 3.4 to the distributed storage and compute resources of the WLCG and EGI.
+
 
 \section*{Conclusion}
+This paper has demonstrated that Distributed Grid Computing is not a legacy paradigm but the mature federated infrastructure that currently 
+underpins the most consequential scientific discoveries of the 21st century. Section I established that the five-layer hourglass 
+architecture — standardising minimally at the interface between resource providers and consumers — has governed grid computing for three decades, 
+surviving every transition from Globus to OGSA to contemporary EOSC-scale deployments \parencite{foster2001}; \parencite{grigoryeva2024}.
+ Section II showed that grid scheduling is NP-complete in its general form, driving adoption of pilot-job architectures, the Rucio–PanDA data locality 
+ stack, and AI-enhanced approaches including deep reinforcement learning \parencite{hegde2024}; \parencite{maeno2024panda}. Section III traced the security 
+ evolution from X.509 proxy delegation to OAuth 2.0 token-based federated identity, documenting a transition driven by operational scale rather than 
+ cryptographic failure, alongside parallel modernisation of Globus, DIRAC, HTCondor, and UNICORE \parencite{dack2024wlcg}. Section IV 
+ confirmed through five production case studies — the WLCG, OSPool, GISAID, ESGF, and KENET — that grid infrastructure is delivering science at scales 
+ that no single institution could achieve alone, while the convergence with cloud and edge computing is extending, not replacing, the federated
+  model \parencite{atlas2025software}; \parencite{petrie2021cmip6}; \parencite{murumba2017kenyan}.
+
+Research communities that fail to invest in federated grid infrastructure face a concrete penalty: the scientific workloads documented in this 
+paper — LHC collision analysis, matched-filter gravitational wave searches, global genomic surveillance, climate model intercomparison — become 
+either computationally infeasible or captive to commercial cloud providers who cannot guarantee the data sovereignty and community governance that 
+large scientific collaborations require. Institutions in emerging research economies, where NREN connectivity and IGTF-accredited credentials are 
+the difference between participation and exclusion, face this penalty most acutely \parencite{murumba2017kenyan}. On 14 September 2015, two black holes 
+merging 1.3 billion light-years away produced a signal lasting less than a fifth of a second — and detecting it required more than 100 institutions 
+operating as one federated grid. Distributed Grid Computing is not merely one approach among many: it is the infrastructure through which humanity 
+currently conducts its most ambitious science, and it will remain so for as long as the most consequential scientific questions demand more than 
+any one institution can provide.
+
 \addcontentsline{toc}{section}{Conclusion}
 
 % --- BIBLIOGRAPHY ---
