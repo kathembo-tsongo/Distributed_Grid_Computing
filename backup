@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 
 % ─────────────────────────────────────────────────────────────────────────────
 % 1. Essential Packages
@@ -6,52 +6,43 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
-\usepackage{graphicx}
-\usepackage[style=apa, backend=biber]{biblatex}
-\usepackage{setspace}
-\usepackage{parskip}
-\usepackage{times}
-\usepackage{hyperref}
-\usepackage{tocloft}
+\usepackage{graphicx} 
+\usepackage[style=apa, backend=biber]{biblatex} 
+\usepackage{setspace} 
+\usepackage{parskip}  
+\usepackage{times}    
+\usepackage{hyperref} 
+\usepackage{tocloft}  
 \usepackage{titlesec}
 \usepackage[table]{xcolor}
 \usepackage{longtable}
 \usepackage{caption}
 \usepackage{float}
-\usepackage{colortbl}
-\usepackage{array}
-\usepackage{ragged2e}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 
 % ─────────────────────────────────────────────────────────────────────────────
-% 2. Global Formatting (12pt Headers + Dot Leaders Everywhere)
+% 2. Global Formatting (12pt & Centering & Dot Leaders)
 % ─────────────────────────────────────────────────────────────────────────────
-\doublespacing
+\onehalfspacing     
 \graphicspath{{./images/}}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-\setlength{\cftsubsubsecnumwidth}{4em}
+\addbibresource{references.bib} 
 
-% Force Dot Leaders for all high-level entries
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+% A. Force Dot Leaders Everywhere (Chapters, Figures, Tables)
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} 
 \renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
 
-% Table of Contents title: centered, 12pt bold
+% B. Table of Contents Centering & 12pt Policy
 \renewcommand{\contentsname}{Table of Contents}
-\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\normalsize\bfseries}
-\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
-\setlength{\cftbeforetoctitleskip}{-30pt}
-\setlength{\cftaftertoctitleskip}{20pt}
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
 
-% List of Figures & Tables: centered, 12pt bold
 \renewcommand{\cftloftitlefont}{\hfill\normalsize\bfseries}
 \renewcommand{\cftafterloftitle}{\hfill}
+
 \renewcommand{\cftlottitlefont}{\hfill\normalsize\bfseries}
 \renewcommand{\cftafterlottitle}{\hfill}
 
-% Force 12pt (normalsize) for all headings
+% C. Force 12pt (normalsize) for Chapters and Sections
 \titleformat{\chapter}[display]
   {\normalfont\normalsize\bfseries\centering}{\chaptertitlename\ \thechapter}{10pt}{\normalsize}
 \titleformat{\section}
@@ -61,154 +52,105 @@
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
-% Standardize spacing
 \titlespacing*{\chapter}{0pt}{-30pt}{20pt}
-\titlespacing*{\section}{0pt}{12pt}{6pt}
-\titlespacing*{\subsection}{0pt}{10pt}{4pt}
 
-% Formatting for ToC/LoF/LoT entries
-\renewcommand{\cftfigfont}{\normalsize}
-\renewcommand{\cfttabfont}{\normalsize}
-\renewcommand{\cftchapfont}{\normalsize\bfseries}
-\renewcommand{\cftchappagefont}{\normalsize\bfseries}
-
-% LoF/LoT indent formatting
-\setlength{\cftfigindent}{0pt}
-\setlength{\cfttabindent}{0pt}
-
-% List of Algorithms title
-% \renewcommand{\listalgorithmname}{List of Algorithms}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% 3. Colors
-% ─────────────────────────────────────────────────────────────────────────────
-\definecolor{tableheader}{RGB}{31, 56, 100}
-\definecolor{tablerowlight}{RGB}{220, 230, 242}
-\definecolor{tablerowwhite}{RGB}{215, 255, 255}
+% Custom colors
 \definecolor{tableblue}{RGB}{31, 56, 100}
 \definecolor{rowblue}{RGB}{235, 241, 250}
 
 % ─────────────────────────────────────────────────────────────────────────────
-% 4. Column type, Hyperref
+% 3. Start of Document
 % ─────────────────────────────────────────────────────────────────────────────
-\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
-
-\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue}
-
-\addbibresource{references.bib}
-
-% ═════════════════════════════════════════════════════════════════════════════
 \begin{document}
-% ═════════════════════════════════════════════════════════════════════════════
 
-% ─────────────────────────────────────────────────────────────────────────────
-% COVER PAGE
-% ─────────────────────────────────────────────────────────────────────────────
+% --- COVER PAGE ---
 \begin{titlepage}
     \begin{center}
         \vspace*{0.5cm}
-        \includegraphics[width=5cm]{strathmore_logo.png}
-
+        \includegraphics[width=5cm]{strathmore_logo.png} 
+        
         \vspace{0.8cm}
         \textbf{\large STRATHMORE UNIVERSITY} \\
-        \textbf{\large SCHOOL OF COMPUTING AND ENGINEERING SCIENCES}\\
+        \textbf{\large SCHOOL OF COMPUTING AND ENGINEERING SCIENCES}\\        
         \vfill
         \textit{Master of Science in Information Technology}\\
         \textbf{MIT8102: Advanced Distributed Systems}
         \vfill
         \textbf{\large TERM PAPER}
         \vspace{0.8cm}
-
+        
         \textbf{\large DISTRIBUTED GRID COMPUTING:} \\
         Architectures, Security, Middleware, and Emerging Paradigms
         \vfill
         \textbf{Prepared by:}\\
         Kathembo Tsongo Dieudonne \textbf{112721} \\
         \vfill
-        \large \today
+        \large \today        
     \end{center}
 \end{titlepage}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% PRELIMINARIES — Roman numeral page numbering
-% FIX: \pagenumbering{roman} must appear BEFORE ToC/LoF/LoT, not after them.
-%      Previously both \pagenumbering calls appeared back-to-back with no
-%      content in between, so the roman-numbered pages were never generated.
-% ─────────────────────────────────────────────────────────────────────────────
+% --- PRELIMINARIES ---
 \newpage
 \pagenumbering{roman}
-\setcounter{page}{2}
 
-% \tableofcontents
-% \newpage
+% Table of Contents
+\cleardoublepage
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+\newpage
 
-% \listoffigures
-% \newpage
+% List of Figures
+\cleardoublepage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\newpage
 
-% \listoftables
-% \newpage
-
-% ─────────────────────────────────────────────────────────────────────────────
-% MAIN BODY — Switch to arabic page numbering HERE (once, after preliminaries)
-% FIX: Was placed immediately after \pagenumbering{roman} with no content
-%      between them, causing the ToC/LoF/LoT to appear in arabic numbering.
-% ─────────────────────────────────────────────────────────────────────────────
+% --- MAIN CONTENT ---
 \pagenumbering{arabic}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% INTRODUCTION (unnumbered chapter so it appears correctly in ToC)
-% FIX: Was declared as \section* inside no chapter, causing structural and
-%      ToC issues. Using \chapter* places it correctly in the document flow.
-% ─────────────────────────────────────────────────────────────────────────────
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-
+\section*{Introduction}
 \subsection*{Background}
-The origins of Distributed Grid Computing lie in the metacomputing experiments of the early 1990s. The I-WAY experiment of 1995 linked supercomputers
+The origins of Distributed Grid Computing lie in the metacomputing experiments of the early 1990s. The I-WAY experiment of 1995 linked supercomputers 
 at seventeen North American sites and proved wide-area distributed computation feasible \parencite{foster1998}. The Globus Project translated that
-insight into a reusable middleware toolkit that became the de facto standard through the 2000s \parencite{foster1997}. Europe responded with the
-EGEE projects and the European Grid Infrastructure (EGI); the United States built TeraGrid, XSEDE, and now ACCESS \parencite{boerner2023access}. Today the
-Worldwide LHC Computing Grid (WLCG) links more than 170 computing centres in 42 countries under a single shared workload \parencite{atlas2025software}.
-Grid computing is defined as the coordinated use of geographically dispersed, heterogeneous computational resources — owned by independent
-institutions — to solve problems beyond the capacity of any single system. Three foundational concepts structure every grid deployment: the
-Virtual Organisation (VO), which governs resource-sharing agreements; the meta-scheduler, which allocates work across VO boundaries; and the
-Grid Security Infrastructure (GSI), which enforces cross-institutional authentication and authorisation \parencite{foster1998}.
+ insight into a reusable middleware toolkit that became the de facto standard through the 2000s \parencite{foster1997}. Europe responded with the 
+ EGEE projects and the European Grid Infrastructure (EGI); the United States built TeraGrid, XSEDE, and now ACCESS \parencite{boerner2023access}. Today the 
+ Worldwide LHC Computing Grid (WLCG) links more than 170 computing centres in 42 countries under a single shared workload \parencite{atlas2025software}.
+  Grid computing is defined as the coordinated use of geographically dispersed, heterogeneous computational resources — owned by independent 
+  institutions — to solve problems beyond the capacity of any single system. Three foundational concepts structure every grid deployment: the 
+  Virtual Organisation (VO), which governs resource-sharing agreements; the meta-scheduler, which allocates work across VO boundaries; and the 
+  Grid Security Infrastructure (GSI), which enforces cross-institutional authentication and authorisation \parencite{foster1998}.
 
 \subsection*{Problem Statement}
-Federating genuinely autonomous institutions creates challenges that neither cluster computing nor commercial cloud computing is designed to solve.
-Scheduling must span multiple administrative domains each enforcing independent priorities — a problem Hegde et al. \parencite{hegde2024} prove is NP-complete
-in its general multi-objective form. Security must extend across domain boundaries without any single authority controlling all participants;
-the original X.509 proxy-delegation model has proven robust but operationally burdensome at scale, motivating an ongoing transition to
-OAuth 2.0 token-based authentication across WLCG and EGI \parencite{dack2024wlcg}. Data volumes are growing faster than network bandwidth:
-the WLCG already manages hundreds of petabytes, and the Square Kilometre Array will generate ~300 petabytes per telescope per year \parencite{scaife2020}.
-Environmental sustainability adds a further constraint: WLCG's 170 data centres consume substantial electrical power, and operating the HL-LHC
-programme within carbon-neutral limits will require simultaneous improvements across software, hardware, and energy procurement \parencite{britton2024energy}.
-These are not isolated problems but structural consequences of the federated architecture that makes grid computing institutionally viable.
+Federating genuinely autonomous institutions creates challenges that neither cluster computing nor commercial cloud computing is designed to solve. 
+Scheduling must span multiple administrative domains each enforcing independent priorities — a problem Hegde et al. \parencite{hegde2024} prove is NP-complete 
+in its general multi-objective form. Security must extend across domain boundaries without any single authority controlling all participants; 
+the original X.509 proxy-delegation model has proven robust but operationally burdensome at scale, motivating an ongoing transition to 
+OAuth 2.0 token-based authentication across WLCG and EGI \parencite{dack2024wlcg}. Data volumes are growing faster than network bandwidth: 
+the WLCG already manages hundreds of petabytes, and the Square Kilometre Array will generate ~300 petabytes per telescope per year \parencite{scaife2020}. 
+Environmental sustainability adds a further constraint: WLCG’s 170 data centres consume substantial electrical power, and operating the HL-LHC
+ programme within carbon-neutral limits will require simultaneous improvements across software, hardware, and energy procurement \parencite{britton2024energy}.
+  These are not isolated problems but structural consequences of the federated architecture that makes grid computing institutionally viable.
 
 \subsection*{Scope}
-This paper provides a comprehensive, analytically structured examination of Distributed Grid Computing across four sections. Section I analyses grid
-architectures: from the five-layer hourglass model \parencite{foster2001} and the Open Grid Services Architecture through to contemporary EOSC-scale
-federated and microservices designs. Section II examines resource management and scheduling: multi-domain meta-scheduling, AI-enhanced job placement,
-data locality-aware scheduling using the Rucio/PanDA production stack, and scientific workflow management under FAIR reproducibility requirements.
+This paper provides a comprehensive, analytically structured examination of Distributed Grid Computing across four sections. Section I analyses grid 
+architectures: from the five-layer hourglass model \parencite{foster2001} and the Open Grid Services Architecture through to contemporary EOSC-scale 
+federated and microservices designs. Section II examines resource management and scheduling: multi-domain meta-scheduling, AI-enhanced job placement, 
+data locality-aware scheduling using the Rucio/PanDA production stack, and scientific workflow management under FAIR reproducibility requirements. 
 Section III covers the evolution of grid security and middleware: from X.509/GSI and VOMS authorisation to token-based federated identity, alongside
-analysis of the Globus, DIRAC, HTCondor, and UNICORE platforms. Section IV synthesises current challenges, presents case studies from high-energy physics,
-gravitational wave astronomy, genomics, climate science, and grid access in Kenya, and analyses grid–cloud–edge convergence. The paper argues that
-the federated governance model at grid computing's core — enabling independent institutions to share resources without surrendering autonomy — is
-the defining architectural insight that commercial cloud computing is structurally unable to replicate, and which makes grid infrastructure irreplaceable
-for large-scale scientific discovery.
+ analysis of the Globus, DIRAC, HTCondor, and UNICORE platforms. Section IV synthesises current challenges, presents case studies from high-energy physics,
+  gravitational wave astronomy, genomics, climate science, and grid access in Kenya, and analyses grid–cloud–edge convergence. The paper argues that 
+  the federated governance model at grid computing’s core — enabling independent institutions to share resources without surrendering autonomy — is 
+  the defining architectural insight that commercial cloud computing is structurally unable to replicate, and which makes grid infrastructure irreplaceable
+   for large-scale scientific discovery.
 
 \section*{Grid Computing Architectures}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/GridArch.jpg}
-    % FIX: Added \caption{} — required for the figure to appear in the List of
-    %      Figures and to avoid a LaTeX warning. \label must come AFTER \caption.
-    \caption{Grid Computing Architecture Overview}
+    \includegraphics[width=0.8\textwidth]{Grid-Computing-Architecture.png} 
+    \caption{Grid Computing Architecture}
     \label{fig:grid_architecture}
 \end{figure}
-
-
 
 \subsection*{The Architgitectural Design Challenge}
 Designing an architecture for Distributed Grid Computing requires resolving a fundamental tension: 
@@ -248,16 +190,6 @@ Interoperability across administrative boundaries requires not only common proto
      diverse ecosystem of European research services \parencite{eosc2022}.
 
 \subsection*{The Five-Layer Hourglass Architecture}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/Hourglass.png}
-    % FIX: Added \caption{} — required for the figure to appear in the List of
-    %      Figures and to avoid a LaTeX warning. \label must come AFTER \caption.
-    \caption{Original Hourglass Network Architecture}
-    \label{fig:grid_architecture}
-\end{figure}
-
 Section 1.1 established that the central challenge of grid architecture is resolving the tension between flexibility and 
 standardisation. The five-layer hourglass model, formally articulated by Foster, Kesselman, and Tuecke \parencite{foster2001}in their 
 foundational paper “The Anatomy of the Grid,” is the architecture that directly addresses this tension. The hourglass metaphor is
@@ -271,7 +203,7 @@ foundational paper “The Anatomy of the Grid,” is the architecture that direc
    across thirty years of evolution, surviving the transition from protocol-centric Globus to service-oriented OGSA to contemporary federated
     cloud deployments.
 
-\subsubsection*{Fabric Layer}
+\subsubsection{Fabric Layer}
     The Fabric layer comprises the physical and logical resources that grid computing aggregates: processors and computational clusters,
      mass storage systems, databases and scientific data archives, network infrastructure, and specialised instruments such as radio telescopes
       and genomic sequencers. As Foster et al. \parencite{foster2001} describe it, “the basic Fabric elements are the same in each case: computers, storage 
@@ -285,7 +217,7 @@ foundational paper “The Anatomy of the Grid,” is the architecture that direc
          architecture is designed so that participating sites do not surrender control of their resources to the grid — a design principle that
           distinguishes grid computing from cloud computing and is essential to securing institutional participation \parencite{foster2001}.
 
-     \subsubsection*{Connectivity Layer}
+     \subsubsection{Connectivity Layer}
     The Connectivity layer is the first of the two protocol layers that form the “narrow neck” of the hourglass — the standardised core 
      that enables the entire architecture. It defines the core communication and authentication protocols that enable grid-specific network
       transactions across diverse administrative domains. \parencite{foster2001} specify that this layer must satisfy three fundamental requirements: 
@@ -298,7 +230,7 @@ foundational paper “The Anatomy of the Grid,” is the architecture that direc
      The protocols of the Connectivity layer are kept deliberately minimal — just enough to establish authenticated, encrypted communication 
      channels — with all higher-level coordination delegated to the layers above, in accordance with the hourglass principle established in Section 1.1.
 
-    \subsubsection*{Resource Layer}
+    \subsubsection{Resource Layer}
     The Resource layer, the second component of the hourglass’s narrow neck, defines protocols for the negotiation, initiation, monitoring, 
     control, accounting, and payment associated with sharing individual resources. It is important to note what this layer does not do: it
      deliberately restricts its scope to interactions with a single resource at a time, leaving the coordination of multiple resources to 
@@ -309,7 +241,7 @@ foundational paper “The Anatomy of the Grid,” is the architecture that direc
       site’s underlying batch system, because the local LRMS is wrapped behind the standard GRAM interface — a concrete example of the 
       hourglass principle in action.
 
-    \subsubsection*{Collective Layer}
+    \subsubsection{Collective Layer}
         The Collective layer is where the distinctive complexity of grid computing resides — and where the architectural principle of the 
         hourglass yields its greatest value. Because Collective layer components build on the standardised narrow neck of the hourglass, 
         they can implement a wide variety of sharing behaviours without placing new requirements on the resources being shared \parencite{foster2001}. 
@@ -337,15 +269,6 @@ foundational paper “The Anatomy of the Grid,” is the architecture that direc
           discussed in Section 1.3.
 
 \subsection*{The Open Grid Services Architecture (OGSA)}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/OGSA.png}
-    % FIX: Added \caption{} — required for the figure to appear in the List of
-    %      Figures and to avoid a LaTeX warning. \label must come AFTER \caption.
-    \caption{Open Grid Services Architecture}
-    \label{fig:grid_architecture}
-\end{figure}
-
 Section 1.2 demonstrated that the five-layer hourglass model deliberately keeps its protocol core minimal, enabling interoperability across 
 heterogeneous resources without demanding conformance to a rigid framework. By the early 2000s, however, a new challenge had emerged: the 
 growing dominance of web services technology in enterprise computing created pressure to align grid infrastructure with mainstream IT
@@ -379,17 +302,6 @@ multiple service invocations. This concept was essential because the conventiona
      wide-area networks — all of which are routine requirements in production scientific grids such as the WLCG \parencite{grigoryeva2024}.
 
 \section*{Federated and Microservices Architectures}
-\begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Federated.jpeg}
-    \hfill % Adds horizontal space between the images
-    \includegraphics[width=0.48\textwidth]{images/Microservice.png}
-    
-    \caption{Federated and Microservices Architecture}
-    \label{fig:grid_architecture}
-\end{figure}
-
 Section 1.3 showed that OGSA’s service-oriented approach, while technically sound, produced complex SOAP/WS-RF-based middleware that proved 
 difficult to deploy at scale across heterogeneous institutional environments. Contemporary production grid infrastructures have consequently 
 evolved in two complementary directions: toward federated governance models that formalise multi-stakeholder coordination, and toward
@@ -427,15 +339,6 @@ the operational complexity that accumulated in monolithic grid middleware stacks
       modify the host operating system.
 
       \subsection*{The European Open Science Cloud and the GLUE Schema}
-      \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/EOSC.png}
-  
-    \caption{Europian Open Science Cloud}
-    \label{fig:grid_architecture}
-\end{figure}
-
       Section 1.4 described how federated governance models and microservices architectures have enabled the progressive integration 
       of heterogeneous computing and data resources across institutional boundaries. The European Open Science Cloud (EOSC) represents 
       the most ambitious current expression of this architectural trajectory. Formally initiated by the European Commission in 2016 and 
@@ -477,14 +380,6 @@ vocabulary. This requirement — recognising that a grid site running UNICORE, a
        the EOSC Interoperability Framework explicitly references GLUE 2.0 as a foundational standard for resource description within the federation \parencite{eosc2022}.
 
 \section*{Resource Management and Scheduling}
-   \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Resource.png}
-  
-    \caption{Resource Management and Scheduling in Cloud Environment}
-    \label{fig:grid_architecture}
-\end{figure}
 Section I established the architectural principles that enable Distributed Grid Computing: the five-layer hourglass model provides a minimal, 
 stable protocol core across heterogeneous resources; OGSA extended this core with stateful, standards-based service interfaces; and federated
  architectures such as EGI and EOSC have formalised the multi-stakeholder governance frameworks necessary for large-scale resource sharing. 
@@ -540,7 +435,7 @@ maintenance windows take computational resources offline unexpectedly, and netwo
     geographically distributed resources under independent administrative control inevitably creates the data-compute co-location problem that 
     distinguishes grid scheduling from all simpler variants of the resource management problem.
 
-\subsection*{Resource Discovery and Information Services}
+\subsection{Resource Discovery and Information Services}
 The prerequisite for any scheduling decision is knowledge of what resources are currently available. Grid information services provide this
  knowledge by maintaining catalogues of resource availability, capability, and configuration. The Monitoring and Discovery Service (MDS) in 
  the Globus Toolkit provides a hierarchical LDAP-based directory of resource information: resources register their status with local aggregators
@@ -634,12 +529,6 @@ Scheduling systems for data-intensive grids must therefore consider data localit
     distributed science.
 
 \subsection*{Workflow Management and Scientific Reproducibility}
-   \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Workflow.png}
-   \label{fig:grid_architecture}
-\end{figure}
 Scientific grid applications increasingly take the form of complex, multi-step workflows in which the output of one computational task serves as the 
 input to the next. Managing such workflows in a grid environment requires systems capable of expressing task dependencies, coordinating data staging 
 between tasks, handling partial failures, and tracking data provenance for scientific reproducibility. Deelman, Vahi, Rynge, Mayani, Ferreira da Silva, 
@@ -673,12 +562,6 @@ Cohen-Boulakia, Soiland-Reyes, Garijo, Gil, Crusoe, Peters, and Schober \parenci
   workflow management systems is now considered a minimum standard for scientific grid infrastructure.
 
 \section*{Security Infrastructure and Middleware}
-   \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Security.png}
-   \label{fig:grid_architecture}
-\end{figure}
 The architectural foundations established in Section I and the resource management mechanisms examined in Section II are both entirely dependent on a 
 third dimension that makes production-scale grid computing possible: security. A grid environment that federates hundreds of administrative domains,
  processing millions of jobs across petabytes of data belonging to thousands of researchers worldwide, operates in an adversarial environment in which
@@ -700,12 +583,6 @@ third dimension that makes production-scale grid computing possible: security. A
      as a single unified account rather than two separate topics.
 
 \subsection*{The Multi-Domain Security Problem}
-\begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/multidomain.jpg}
-   \label{fig:grid_architecture}
-\end{figure}
 Security in Distributed Grid Computing is fundamentally more challenging than in single-domain distributed systems because it must span multiple
  administrative security domains, each with its own user directory, access control framework, and trust model. The challenge is not merely technical 
  but structural: no single authority controls all the participating institutions, yet the security of any one site depends on the integrity of the 
@@ -788,12 +665,6 @@ The technical specification for proxy certificates is RFC 3820, authored by Tuec
         management that even the sophisticated MyProxy architecture could only partially mitigate.
 
 \subsection*{Federated Identity: The Transition Beyond X.509}
-\begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/x5.png}
-   \label{fig:grid_architecture}
-\end{figure}
 A significant security evolution in contemporary grid infrastructure is the transition from X.509 grid certificates toward federated identity 
 and token-based authentication. X.509 certificates have historically been a significant usability barrier: obtaining a grid certificate requires 
 interaction with a Grid CA’s registration process, managing certificate lifetimes adds operational complexity, and the manual registration authority
@@ -876,12 +747,6 @@ The system combines OIDC-based authentication with fine-grained group and role
 \subsection*{Major Middleware Platforms}
 
 \subsubsection*{The Globus Platform}
-\begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Globus.png}
-   \label{fig:grid_architecture}
-\end{figure}
 The Globus platform, evolved from the Globus Toolkit through a decade of architectural redesign, is the most widely deployed grid and research
  computing middleware in the world as of 2025. Unlike its predecessor, which was distributed as open-source software that each site installed
  and operated independently, the contemporary Globus platform is delivered primarily as a cloud-hosted service with lightweight software agents 
@@ -913,14 +778,7 @@ The Globus platform, evolved from the Globus Toolkit through a decade of archite
     than 100 grid sites and has been adopted by communities in astrophysics, bioinformatics, and climate science beyond its origins in high-energy
     physics \parencite{stagni2024dirac}.
 
-    \subsubsection*{HTCondor and High-Throughput Computing}
-     \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/HTCondor.jpg}
-   \label{fig:grid_architecture}
-\end{figure}
-
+    \subsubsection{HTCondor and High-Throughput Computing}
     HTCondor, developed at the University of Wisconsin-Madison’s Center for High Throughput Computing since 1984, is optimised for high-throughput 
     computing (HTC) — executing very large numbers of independent jobs to maximise aggregate completion rate rather than minimising the latency of 
     any individual job. HTCondor’s ClassAd matchmaking language allows extraordinarily flexible expression of job requirements and resource capabilities,
@@ -933,13 +791,7 @@ The Globus platform, evolved from the Globus Toolkit through a decade of archite
       and resource types that multi-domain grid environments contain. The Open Science Pool (OSPool), managed by the OSG Consortium and based on 
       HTCondor, provided more than 850 million CPU core-hours to US open-science researchers in 2023 — making it one of the most productive research computing infrastructures in the world  \parencite{graur2023}.
 
-      \subsubsection*{UNICORE for HPC Integration}
-        \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/unicore.png}
-   \label{fig:grid_architecture}
-\end{figure}
+      \subsubsection{UNICORE for HPC Integration}
       UNICORE (Uniform Interface to Computing Resources), developed in Germany and widely adopted across European HPC centres, provides a gateway-based 
       integration approach particularly well suited to connecting traditional HPC batch computing environments to grid and cloud access layers.
        The UNICORE architecture centres on a layered gateway model in which a client-facing UNICORE/X gateway component translates job submission 
@@ -1011,7 +863,7 @@ and job monitoring face significant scalability challenges. Traditional hierarch
      engineering challenge requiring the full DevOps monitoring stack and, increasingly, machine learning for automated anomaly detection at the 
      scale of hundreds of sites and millions of daily jobs.
 
-\subsubsection*{Artificial Intelligence Integration}
+\subsubsection{Artificial Intelligence Integration}
 The integration of AI and machine learning into grid computing operations is one of the most active research areas in 2024–2025, directly extending 
 the algorithmic foundations laid in Section 2.3’s examination of ML-enhanced scheduling. AI is being applied across four principal dimensions in 
 contemporary grid environments. The first is predictive scheduling: using machine learning models trained on historical job traces to predict resource 
@@ -1035,7 +887,7 @@ requirements and run times, enabling schedulers to make better-informed placemen
         of grid middleware will be characterised not by static heuristics but by continuously learning, adaptive operational intelligence trained on the 
         rich job and monitoring telemetry that production grids generate at scale.
 
-\subsubsection*{Data Management at Exascale}
+\subsubsection{Data Management at Exascale}
 The volumes of scientific data that grid infrastructure must manage are growing at rates that challenge current storage, network, and software
  infrastructure simultaneously. The Square Kilometre Array (SKA) telescope, under construction in South Africa and Australia, represents the most 
  demanding data challenge in the history of scientific computing. Scaife \parencite{scaife2020}, in the peer-reviewed paper “Big telescope, big data: towards 
@@ -1054,7 +906,7 @@ The volumes of scientific data that grid infrastructure must manage are growing 
       delivering SKA data under FAIR principles through the SRCNet, making it the first observatory-scale scientific data grid to embed FAIR 
       compliance as a first-class design requirement from the outset rather than as a retrofit.
  
-      \subsubsection*{Environmental Sustainability}
+      \subsubsection{Environmental Sustainability}
 The environmental impact of large-scale computing infrastructure has become a significant concern as research organisations commit to carbon neutrality 
 targets mandated by funding agencies and national governments. Britton, Campana, and Panzer-Stradel \parencite{britton2024energy}, in their peer-reviewed paper “A holistic
  study of the WLCG energy needs for the LHC scientific program” published in EPJ Web of Conferences at CHEP 2023, provide the most authoritative 
@@ -1073,7 +925,7 @@ targets mandated by funding agencies and national governments. Britton, Campana,
 
 \subsection*{Case Studies}
 
-\subsubsection*{The Worldwide LHC Computing Grid (WLCG) and LHC Run 3}
+\subsubsection{The Worldwide LHC Computing Grid (WLCG) and LHC Run 3}
 The Worldwide LHC Computing Grid (WLCG) remains the world’s largest scientific grid, linking more than 170 computing centres in 42 countries to 
 process data from the Large Hadron Collider at CERN. The LHC’s Run 3, which began in 2022 after a three-year shutdown for accelerator and detector
  upgrades, substantially increased data volumes. The ATLAS Collaboration \parencite{atlas2025software}, in the comprehensive paper “Software and Computing for Run 3 of 
@@ -1099,7 +951,7 @@ The LIGO-Virgo-KAGRA (LVK) collaboration uses OSPool resources extensively for t
  embarrassingly parallel workload that maps almost perfectly onto the high-throughput computing model that OSPool and HTCondor were designed for, 
  illustrating why the grid computing paradigm has proven so durable for data-intensive scientific discovery.
 
-  \subsubsection*{Grid Computing in Genomics: The COVID-19 Response}
+  \subsubsection{Grid Computing in Genomics: The COVID-19 Response}
   The COVID-19 pandemic generated unprecedented demand for large-scale genomic analysis, and the response demonstrated both the power 
   and the limitations of distributed data grid infrastructure at global scale. The GISAID initiative — originally established as a global 
   data grid for influenza genomic surveillance and documented by Shu and McCauley \parencite{shu2017gisaid} in Eurosurveillance — pivoted rapidly to become
@@ -1116,14 +968,7 @@ The LIGO-Virgo-KAGRA (LVK) collaboration uses OSPool resources extensively for t
        SARS-CoV-2 proteome, including dramatic spike protein opening far beyond that observed experimentally, revealing new targets for antiviral 
        design that would have been computationally inaccessible without the exascale capacity that Folding@home’s distributed architecture provided.
 
-\subsubsection*{The Earth System Grid Federation}
-\begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Earth.png}
-   \label{fig:grid_architecture}
-\end{figure}
-
+\subsubsection{The Earth System Grid Federation}
 The Earth System Grid Federation (ESGF) is a peer-to-peer data grid that distributes climate model output from the Coupled Model 
 Intercomparison Project (CMIP) to researchers worldwide. Petrie, Denvil, Ames, Levavasseur, Fiore, Allen, Antonio, Berger, Bretonnière, 
 Cinquini, Dart, Dwarakanath, Druken, Evans, Franchistéguy, Gardoll, Gerbier, Greenslade, Hassell, Iwi, Juckes, Kindermann, Lacinski, Mirto, 
@@ -1138,7 +983,7 @@ ESGF plays a direct role in the architectural principles examined throughout thi
  groups — made possible by ESGF’s standardised data formats and access protocols — was essential to the AR6’s characterisation of climate model
   uncertainty and the robustness of its projections.
 
-\subsubsection*{Grid Computing Access in Kenya and Africa}
+\subsubsection{Grid Computing Access in Kenya and Africa}
 In the African context, Distributed Grid Computing infrastructure has been developing along two complementary tracks: the construction of national 
 research and education network (NREN) connectivity that provides the bandwidth prerequisite for grid participation, and the acquisition of grid 
 credentials and access to international computing resources through that connectivity. Murumba and Micheni \parencite{murumba2017kenyan}, in their peer-reviewed paper 
@@ -1156,8 +1001,8 @@ reach of any single Kenyan institution. The paper also documents KENET’s 2016 
    institutions — through KENET’s IGTF-trusted credential infrastructure, UbuntuNet Alliance’s regional backbone, and the AfricaConnect
     EU-funded projects — represents an important and ongoing dimension of the global democratisation of scientific computing.
 
-\subsection*{The Convergence of Grid, Cloud, and Edge Computing}
-|\subsubsection*{Hybrid Grid-Cloud Architectures}
+\subsection{The Convergence of Grid, Cloud, and Edge Computing}
+|\subsubsection{Hybrid Grid-Cloud Architectures}
 The relationship between grid computing and cloud computing has evolved from perceived competition to productive complementarity, 
 driven by the recognition that dedicated grid infrastructure and commercial cloud resources each have structural advantages that the other cannot 
 replicate. Dedicated grid infrastructure provides predictable, long-term capacity under institutional control, deep integration with 
@@ -1178,14 +1023,7 @@ Contemporary research computing environments deploy hybrid architectures that co
     and Globus Transfer services that abstract over the heterogeneity of underlying computing and storage environments — whether traditional
      grid batch systems or cloud virtual machines — behind consistent REST APIs \parencite{chard2023}.
 
-\subsubsection*{Edge Computing and Real-Time Scientific Grids}
-  \begin{figure}[H]
-    \centering
-    % Adjust the width (e.g., 0.48) so both fit on one line
-    \includegraphics[width=0.48\textwidth]{images/Edge.jpg}
-   \label{fig:grid_architecture}
-\end{figure}
-
+\subsubsection{Edge Computing and Real-Time Scientific Grids}
 The growing volume of data generated by scientific instruments at remote field sites has motivated the integration of edge computing into grid
  architectures. Rather than transmitting all raw sensor data to centralised data centres, edge computing deploys processing capacity at or near 
  the data source, performing initial data reduction before transmitting significantly compressed data products to the central grid. The SKA 
@@ -1203,7 +1041,7 @@ The growing volume of data generated by scientific instruments at remote field s
    the extreme of the data-volume spectrum. Designing, building, and operating this global data grid infrastructure for the SKA is one of the most
     technically challenging distributed systems engineering problems currently under active development.
 
-\subsubsection*{AI and Machine Learning Workloads on Grid Infrastructure}
+\subsubsection{AI and Machine Learning Workloads on Grid Infrastructure}
 The rapid growth of AI and machine learning as tools for scientific data analysis has created new demands on grid infrastructure that extend the 
 scheduling and data management challenges examined in Sections 2.1–2.3. Training large deep learning models requires GPU computing resources and
  the ability to distribute training across multiple nodes — a workload pattern characterised by tightly coupled, communication-intensive parallel 
